@@ -9,6 +9,10 @@
     border-color: rgba(255, 255, 255, 0.1); /* #FFFFFF1A */
   }
 
+  .border-bottom-custom-adventage {
+    border: 1.2px solid #A39BD61A;
+  }
+
   .border-bottom-custom2 {
     border-width: 1.2px;
     border-style: solid;

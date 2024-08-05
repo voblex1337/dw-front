@@ -6,12 +6,17 @@ export default {
   ],
   theme: {
     extend: {
+      boxShadow: {
+        'custom': '0px 0px 15px 0px #A39BD6B2',
+      },
       colors: {
         'navbar-bg': '#000003',
+        'custom-black-adventage':'#09090D',
+        'custom-white-adventage':'#FFFFFF40'
       },
       backgroundImage: {
         'custom-gradient': 'linear-gradient(90deg, #A39BD6 0%, #69648A 100%)',
-        'custom-gradient2': 'radial-gradient(100% 100% at 50.43% 100%, rgba(212, 205, 255, 0.3) 0%, rgba(212, 205, 255, 0) 100%)'
+        'custom-gradient2': 'radial-gradient(100% 100% at 50.43% 100%, rgba(212, 205, 255, 0.3) 0%, rgba(212, 205, 255, 0) 100%)',
       },
     },
   },

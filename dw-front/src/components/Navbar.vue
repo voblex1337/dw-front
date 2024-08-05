@@ -1,10 +1,10 @@
 <template>
-  <div class="flex flex-col bg-navbar-bg border-bottom-custom">
+  <div class=" w-full z-50 bg-navbar-bg border-bottom-custom bg-opacity-25">
     <nav class="relative w-full flex items-center justify-between shadow-dark-mild z-50 nav-border py-2 h-[76px]">
       <!-- Логотип -->
       <div class="absolute top-1/2 transform -translate-y-1/2 left-[24px]">
         <a>
-          <img class="h-10 w-10 md:h-10 md:w-10 lg:h-10 lg:w-10" src="../assets/img/logo.png" alt="TE Logo" loading="lazy" />
+          <img class="h-10 w-10 md:h-10 md:w-10 lg:h-10 lg:w-10 animate-spin" src="../assets/img/logo.png" alt="TE Logo" loading="lazy" />
         </a>
       </div>
 

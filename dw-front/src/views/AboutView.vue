@@ -11,7 +11,7 @@
 
     <div class="flex flex-col items-center justify-start w-full space-y-8 md:space-y-16"> 
 
-      <div class="flex items-center justify-center w-full h-screen p-4">
+      <div class="flex items-center justify-center w-full h-screen" style="background-image: url('../assets/img/Dots.png');">
         <Title />
       </div>
 

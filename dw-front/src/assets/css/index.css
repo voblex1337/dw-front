@@ -20,11 +20,8 @@
     border-image-slice: 1;
   }
 
-  .custom-gradient-text-anventage {
-    background: linear-gradient(90deg, #FFFFFF 0%, #D4CDFF 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+  .custom-border-popup {
+    border: 1px solid rgba(255, 255, 255, 0.06);
   }
   
   .custom-gradient-text-title {
@@ -34,6 +31,8 @@
     background-clip: text;
     text-fill-color: transparent;
   }
+
+  
 }
 
 body {

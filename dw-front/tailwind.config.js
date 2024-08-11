@@ -12,7 +12,7 @@ export default {
       colors: {
         'navbar-bg': '#000003',
         'custom-black-adventage':'#09090D',
-        'custom-white-adventage':'#FFFFFF40',
+        'custom-white-adventage':'#262626',
         'custom-back-popup-input':'#17171b',
         'main':'#A39BD6',
         'titles-color':'#E8E4FF'

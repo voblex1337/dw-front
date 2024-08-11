@@ -15,7 +15,7 @@
             <div class="relative mb-4">
               <input 
                 id="login"
-                v-model="login" 
+                v-model="username" 
                 placeholder="Username" 
                 type="text" 
                 class="w-full border-gray-300 rounded-md px-10 py-2 bg-custom-back-popup-input custom-border-popup text-white"
@@ -33,7 +33,7 @@
             <div class="relative mb-4">
               <input 
                 id="login"
-                v-model="login" 
+                v-model="email" 
                 placeholder="Email" 
                 type="email" 
                 class="w-full border-gray-300 rounded-md px-10 py-2 bg-custom-back-popup-input custom-border-popup text-white"
@@ -90,8 +90,9 @@
   const emit = defineEmits(['close-popup'])
 
   // login и password
-  const login = ref(null)
-  const password = ref(null)
+  const username = ref<string>('')
+  const email = ref<string>('')
+  const password = ref<string>('')
 
   // Закрытие модального окна и уведомление родителя
   const closePopup = () => {

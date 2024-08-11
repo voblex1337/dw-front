@@ -1,6 +1,5 @@
 <template>
-  <main class="relative min-h-screen">
-    <!-- Передача функции togglePopup в Navbar -->
+  <main class="relative min-h-screen select-none	">
     <Navbar @open-login-popup="toggleLoginPopup" @open-signup-popup="toggleSignupPopup" />
 
     <div class="flex flex-col items-center justify-start w-full gap-y-32">
@@ -17,10 +16,16 @@
         <Reviews />
       </div>
 
+      <div class="flex items-center justify-center w-full h-screen mb-72">
+        <Pricing />
+      </div>
+
     </div>
 
     <LoginPopup v-if="showLoginPopup" @close-popup="toggleLoginPopup" />
     <SignupPopup v-if="showSignupPopup" @close-popup="toggleSignupPopup" />
+
+    <Footer />
   </main>
 </template>
 
@@ -33,6 +38,8 @@ import Adventages from '@/components/Adventages.vue'
 import LoginPopup from '@/components/LoginPopup.vue'
 import SignupPopup from '@/components/RegPopup.vue'
 import Reviews from '@/components/Reviews.vue'
+import Pricing from '@/components/Pricing.vue'
+import Footer from '@/components/Footer.vue'
 
 const showLoginPopup = ref(false)
 const showSignupPopup = ref(false)
@@ -47,6 +54,3 @@ const toggleSignupPopup = () => {
 }
 </script>
 
-<style scoped>
-/* Дополнительные стили при необходимости */
-</style>

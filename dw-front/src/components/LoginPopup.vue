@@ -73,20 +73,13 @@
 <script setup lang="ts">
   import { ref, defineEmits } from 'vue'
 
-  // Определяем эмиты
   const emit = defineEmits(['close-popup'])
 
-  // login и password
-  const login = ref(null)
-  const password = ref(null)
+  const login = ref<string>('')
+  const password = ref<string>('')
 
-  // Закрытие модального окна и уведомление родителя
   const closePopup = () => {
     emit('close-popup')
   }
 </script>
 
-<style scoped>
-/* Стили для иконок и отступов */
-
-</style>

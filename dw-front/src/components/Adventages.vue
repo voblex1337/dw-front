@@ -7,7 +7,8 @@
       <h1 class="text-center text-6xl custom-gradient-text-title">Why DrainWalk?</h1>
     </div>
 
-    <img src="../assets/img/glow.png" alt="icon" class="absolute z-0 w-full h-full object-cover" />
+    <img src="../assets/img/glow.png" alt="icon" class="absolute z-10"/>
+    <img src="../assets/img/particlesAdventages.png" alt="icon" class="absolute w-full z-0 " />
 
     <!-- Основной контент -->
     <div class="flex flex-col w-full gap-y-20">
@@ -88,17 +89,8 @@
   </div>
 </template>
       
-  <script>
-  export default {
-    setup() {
-      return {
-  
-      }
-    }
-  }
-  </script>
-    
-  <style scoped>
-  
-  </style>
+<script setup lang="ts">
+
+</script>
+
       

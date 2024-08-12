@@ -1,5 +1,5 @@
 <template>
-  <main class="relative min-h-screen select-none	">
+  <main class="relative min-h-screen select-none overflow-hidden" >
     <Navbar @open-login-popup="toggleLoginPopup" @open-signup-popup="toggleSignupPopup" />
 
     <div class="flex flex-col items-center justify-start w-full gap-y-32">

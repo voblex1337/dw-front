@@ -5,8 +5,8 @@
             <span> <a href="https://t.me/jbdsgn" target="_blank"> Design by Jebrik12 </a> </span>
         </div>
         <div class="flex space-x-4">
-            <a href="#" class="text-2xl"><img src="../assets/img/icons/Footer/discord.png"></a>
-            <a href="#" class="text-2xl"><img src="../assets/img/icons/Footer/telegram.png"</a>
+            <a href="https://discord.gg/zP2VRsMnWW" target="_blank" class="text-2xl"><img src="../assets/img/icons/Footer/discord.png"></a>
+            <a href="https://t.me/drainwalk" target="_blank" class="text-2xl"><img src="../assets/img/icons/Footer/telegram.png"></a>
         </div>
     </footer>
 </template>

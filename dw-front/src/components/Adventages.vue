@@ -7,8 +7,8 @@
       <h1 class="text-center text-6xl custom-gradient-text-title">Why DrainWalk?</h1>
     </div>
 
-    <img src="../assets/img/glow.png" alt="icon" class="absolute z-10"/>
-    <img src="../assets/img/particlesAdventages.png" alt="icon" class="absolute w-full z-0 " />
+    <img src="../assets/img/glow.png" alt="icon" class="absolute z-10 h-1/4"/>
+    <img src="../assets/img/Dots/AdventagesDots.png" alt="icon" class="absolute w-full z-0 " />
 
     <!-- Основной контент -->
     <div class="flex flex-col w-full gap-y-20">
@@ -58,7 +58,7 @@
       </div>
 
       <!-- Статистика -->
-      <div class="flex flex-wrap justify-center gap-6 md:gap-x-28 gap-y-4 z-50">
+      <div class="flex flex-wrap justify-center gap-6 md:gap-x-28 gap-y-4 z-40">
 
         <span class="text-white flex flex-row text-xl items-center gap-2">
           <img src="../assets/img/Adventages/Users.png" alt="Users icon" class="w-6 h-6">
@@ -82,8 +82,7 @@
           <img src="../assets/img/Adventages/Days.png" alt="Days icon" class="w-6 h-6">
           Days: 1886
         </span>
-        <img src="../assets/img/Adventages/separator.png" alt="Separator" class="hidden md:block">
-
+        
       </div>
     </div>
   </div>

@@ -1,5 +1,5 @@
 <template>
-  <img src="../assets/img/Dots.png" alt="" class="absolute">
+  <img src="../assets/img/Dots/TitleDots.png" alt="" class="absolute">
   <div class="shadow-lg  w-full max-w-full h-full flex flex-col items-center justify-center gap-y-2">
       <h1 class="text-center text-white text-6xl">Get DrainWalk.</h1>
       <img src="../assets/img/glow.png" class="absolute z-10">

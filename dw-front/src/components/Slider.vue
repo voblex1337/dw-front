@@ -1,11 +1,11 @@
 <template>
-    <div class="scroller-container z-50">
+    <div class="scroller-container z-50 gap-y-8">
       <!-- Верхний скроллер -->
       <div class="scroller" data-direction="left" data-speed="fast">
 
         <div class="scroller__inner">
           <Review v-for="(review, index) in reviews" :review="review"/>
-          <!-- Клонируем элементы для непрерывности -->
+
           <Review v-for="(review, index) in reviews" :review="review"/>
         </div>
         
@@ -16,32 +16,36 @@
 
         <div class="scroller__inner">
           <Review v-for="(review, index) in reviews" :review="review"/>
-          <!-- Клонируем элементы для непрерывности -->
-          <Review v-for="(review, index) in reviews" :review="review"/>
-        </div>
 
+          <Review v-for="(review, index) in reviews" :review="review"/>
+          <img src="../assets/img/glow.png" alt="icon" class="absolute z-50"/>
+        </div>
       </div>
     </div>
   </template>
 
 <script lang="ts" setup>
 import { onMounted } from 'vue';
-import Review from '../components/SingleReview.vue'
+import Review from '@/components/SingleReview.vue'
 
 const reviews = [
-{ text: "With drainwalk you will always defeat everyone, because our cheat bypasses a huge number of anti-cheats. With drainwalk you will always defeat everyone.", 
-    avatar: "/src/assets/img/ReviewsAvatars/avatar1.png"},
-    { text: "With drainwalk you will always defeat everyone, because our cheat bypasses a huge number of anti-cheats. With drainwalk you will always defeat everyone.", 
-    avatar: "/src/assets/img/ReviewsAvatars/avatar1.png"},
-    { text: "With drainwalk you will always defeat everyone, because our cheat bypasses a huge number of anti-cheats. With drainwalk you will always defeat everyone.", 
-    avatar: "/src/assets/img/ReviewsAvatars/avatar1.png"},
-    { text: "With drainwalk you will always defeat everyone, because our cheat bypasses a huge number of anti-cheats. With drainwalk you will always defeat everyone.", 
-    avatar: "/src/assets/img/ReviewsAvatars/avatar1.png"},
-    
   { text: "With drainwalk you will always defeat everyone, because our cheat bypasses a huge number of anti-cheats. With drainwalk you will always defeat everyone.", 
-    avatar: "/src/assets/img/ReviewsAvatars/avatar1.png"},
-    { text: "With drainwalk you will always defeat everyone, because our cheat bypasses a huge number of anti-cheats. With drainwalk you will always defeat everyone.", 
-    avatar: "/src/assets/img/ReviewsAvatars/avatar1.png"},
+  avatar: "/src/assets/img/ReviewsAvatars/avatar1.png"},
+
+  { text: "With drainwalk you will always defeat everyone, because our cheat bypasses a huge number of anti-cheats. With drainwalk you will always defeat everyone.", 
+  avatar: "/src/assets/img/ReviewsAvatars/avatar1.png"},
+
+  { text: "With drainwalk you will always defeat everyone, because our cheat bypasses a huge number of anti-cheats. With drainwalk you will always defeat everyone.", 
+  avatar: "/src/assets/img/ReviewsAvatars/avatar1.png"},
+
+  { text: "With drainwalk you will always defeat everyone, because our cheat bypasses a huge number of anti-cheats. With drainwalk you will always defeat everyone.", 
+  avatar: "/src/assets/img/ReviewsAvatars/avatar1.png"},
+  
+  { text: "With drainwalk you will always defeat everyone, because our cheat bypasses a huge number of anti-cheats. With drainwalk you will always defeat everyone.", 
+  avatar: "/src/assets/img/ReviewsAvatars/avatar1.png"},
+
+  { text: "With drainwalk you will always defeat everyone, because our cheat bypasses a huge number of anti-cheats. With drainwalk you will always defeat everyone.", 
+  avatar: "/src/assets/img/ReviewsAvatars/avatar1.png"},
 ];
 
 
@@ -55,16 +59,11 @@ onMounted(() => {
 
   function addAnimation() {
     scrollers.forEach((scroller) => {
-      // add data-animated="true" to every `.scroller` on the page
       scroller.setAttribute("data-animated", "true");
 
-      // Make an array from the elements within `.scroller-inner`
       const scrollerInner = scroller.querySelector(".scroller__inner") as HTMLElement;
       const scrollerContent = Array.from(scrollerInner.children);
 
-      // For each item in the array, clone it
-      // add aria-hidden to it
-      // add it into the `.scroller-inner`
       scrollerContent.forEach((item) => {
         const duplicatedItem = item.cloneNode(true) as HTMLElement;
         duplicatedItem.setAttribute("aria-hidden", "true");
@@ -82,11 +81,6 @@ onMounted(() => {
   display: flex;
   flex-direction: column;
   overflow: hidden;
-}
-
-.scroller {
-  width: 100%;
-  height: 22%;
 }
 
 .scroller__inner {

@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@ssense/vue-carousel": "^0.6.5",
+    "axios": "^1.3.1",
     "vue": "^3.4.29",
     "vue-router": "^4.3.3",
     "vue3-carousel": "^0.3.3"

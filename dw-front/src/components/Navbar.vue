@@ -3,42 +3,45 @@
     <nav class="relative w-full flex items-center justify-between shadow-dark-mild z-50 nav-border py-2 h-[76px]">
       <div class="absolute top-1/2 transform -translate-y-1/2 left-[24px]">
         <a>
-          <img class="h-10 w-10 md:h-10 md:w-10 lg:h-10 lg:w-10 " src="../assets/img/Vector.svg" alt="TE Logo" loading="lazy" />
+          <img class="h-10 w-10 md:h-10 md:w-10 lg:h-10 lg:w-10" src="../assets/img/Avatar.svg" alt="TE Logo" loading="lazy" />
         </a>
       </div>
 
       <div class="flex w-full items-center px-4 md:px-24 lg:px-36 xl:px-36 2xl:px-36 py-4">
-
         <div class="flex flex-row w-full justify-center hidden lg:flex">
           <div class="flex gap-2.5 text-xl">
-            <router-link 
-              to="/" 
+            <a 
+              href="#sectionAbout" 
               class="menu-item" 
-              :class="{ 'active': isActive('/') }">
+              :class="{ 'active': activeSection === 'about' }"
+              @click="scrollToSection('about')">
               About
-              <span v-if="isActive('/')" class="indicator"></span>
-            </router-link>
-            <router-link 
-              to="/feedback" 
+              <span v-if="activeSection === 'about'" class="indicator"></span>
+            </a>
+            <a 
+              href="#sectionAdventages" 
               class="menu-item" 
-              :class="{ 'active': isActive('/feedback') }">
+              :class="{ 'active': activeSection === 'adventages' }"
+              @click="scrollToSection('adventages')">
               FeedBack
-              <span v-if="isActive('/feedback')" class="indicator"></span>
-            </router-link>
-            <router-link 
-              to="/buy" 
+              <span v-if="activeSection === 'adventages'" class="indicator"></span>
+            </a>
+            <a 
+              href="#sectionReviews" 
               class="menu-item" 
-              :class="{ 'active': isActive('/buy') }">
+              :class="{ 'active': activeSection === 'reviews' }"
+              @click="scrollToSection('reviews')">
               Pricing
-              <span v-if="isActive('/buy')" class="indicator"></span>
-            </router-link>
-            <router-link 
-              to="/faq" 
+              <span v-if="activeSection === 'reviews'" class="indicator"></span>
+            </a>
+            <a 
+              href="#sectionPricing" 
               class="menu-item" 
-              :class="{ 'active': isActive('/faq') }">
+              :class="{ 'active': activeSection === 'pricing' }"
+              @click="scrollToSection('pricing')">
               FAQ
-              <span v-if="isActive('/faq')" class="indicator"></span>
-            </router-link>
+              <span v-if="activeSection === 'pricing'" class="indicator"></span>
+            </a>
           </div>
         </div>
       </div>
@@ -54,13 +57,18 @@
 </template>
 
 <script setup lang="ts">
-  import { useRoute } from 'vue-router'
+import { ref } from 'vue'
 
-  const route = useRoute()
+const props = defineProps<{
+  activeSection: string
+}>()
 
-  const isActive = (path: string) => {
-    return route.path === path
+const scrollToSection = (section: string) => {
+  const element = document.getElementById(`section${section.charAt(0).toUpperCase() + section.slice(1)}`)
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth' })
   }
+}
 </script>
 
 <style scoped>
@@ -69,6 +77,7 @@
   padding: 0.5rem 1rem;
   text-decoration: none;
   color: white;
+  cursor: pointer; 
 }
 
 .indicator {
@@ -77,9 +86,13 @@
   bottom: -5px;
   left: 50%;
   transform: translateX(-50%);
-  width: 6px; /* уменьшенный размер */
-  height: 6px; /* уменьшенный размер */
-  background-color: #A39BD6; /* измененный цвет */
+  width: 6px; 
+  height: 6px; 
+  background-color: #A39BD6; 
   border-radius: 50%;
+}
+
+.menu-item.active {
+  font-weight: bold;
 }
 </style>

@@ -9,48 +9,65 @@
 
       <div class="flex w-full items-center px-4 md:px-24 lg:px-36 xl:px-36 2xl:px-36 py-4">
         <div class="flex flex-row w-full justify-center hidden lg:flex">
-          <div class="flex gap-2.5 text-xl">
-            <a 
-              href="#sectionAbout" 
-              class="menu-item" 
-              :class="{ 'active': activeSection === 'about' }"
-              @click="scrollToSection('about')">
-              About
-              <span v-if="activeSection === 'about'" class="indicator"></span>
-            </a>
-            <a 
-              href="#sectionAdventages" 
-              class="menu-item" 
-              :class="{ 'active': activeSection === 'adventages' }"
-              @click="scrollToSection('adventages')">
-              FeedBack
-              <span v-if="activeSection === 'adventages'" class="indicator"></span>
-            </a>
-            <a 
-              href="#sectionReviews" 
-              class="menu-item" 
-              :class="{ 'active': activeSection === 'reviews' }"
-              @click="scrollToSection('reviews')">
-              Pricing
-              <span v-if="activeSection === 'reviews'" class="indicator"></span>
-            </a>
-            <a 
-              href="#sectionPricing" 
-              class="menu-item" 
-              :class="{ 'active': activeSection === 'pricing' }"
-              @click="scrollToSection('pricing')">
-              FAQ
-              <span v-if="activeSection === 'pricing'" class="indicator"></span>
-            </a>
-          </div>
+
+          <RouterLink :to="{ name: 'main' }">
+            <div class="flex gap-2.5 text-xl">
+
+              <a 
+                href="#sectionAbout" 
+                class="menu-item" 
+                :class="{ 'active': activeSection === 'about' }"
+                @click="scrollToSection('about')">
+                About
+                <span v-if="activeSection === 'about'" class="indicator"></span>
+              </a>
+
+              <a 
+                href="#sectionReviews" 
+                class="menu-item" 
+                :class="{ 'active': activeSection === 'reviews' }"
+                @click="scrollToSection('reviews')">
+                FeedBack
+                <span v-if="activeSection === 'reviews'" class="indicator"></span>
+              </a>
+
+              <a 
+                href="#sectionPricing" 
+                class="menu-item" 
+                :class="{ 'active': activeSection === 'pricing' }"
+                @click="scrollToSection('pricing')">
+                Pricing
+                <span v-if="activeSection === 'pricing'" class="indicator"></span>
+              </a>
+
+              <a 
+                href="#sectionFaq" 
+                class="menu-item" 
+                :class="{ 'active': activeSection === 'faq' }"
+                @click="scrollToSection('faq')">
+                FAQ
+                <span v-if="activeSection === 'faq'" class="indicator"></span>
+              </a>
+
+              </div>
+          </RouterLink>
+          
         </div>
       </div>
 
       <div class="absolute top-1/2 transform -translate-y-1/2 right-[24px] z-50">
-        <div class="flex flex-row gap-2.5 z-50">
+
+        <div class="flex flex-row gap-2.5 z-50" v-if="!getJwtToken">
           <button class="text-white rounded-md px-4 py-1.5" @click="$emit('open-login-popup')">Login</button>
           <button class="text-white bg-custom-gradient rounded-md px-4 py-1.5" @click="$emit('open-signup-popup')">Sign up</button>
         </div>
+
+        <div class="flex flex-row gap-2.5 z-50">
+          <RouterLink :to="{ name: 'profile', params: { userId: 123 } }">
+            <button class="text-white rounded-md px-4 py-1.5">Profile</button>
+          </RouterLink>
+        </div>
+
       </div>
     </nav>
   </div>
@@ -58,9 +75,10 @@
 
 <script setup lang="ts">
 import { ref } from 'vue'
+import getJwtToken from '@/services/AuthService'
 
 const props = defineProps<{
-  activeSection: string
+  activeSection: string | null
 }>()
 
 const scrollToSection = (section: string) => {

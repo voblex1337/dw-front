@@ -7,7 +7,7 @@
       <Title />
     </div>
 
-    <div id="sectionAdventages" class="flex items-center justify-center w-full h-screen p-4">
+    <div id="sectionAbout" class="flex items-center justify-center w-full h-screen p-4">
       <Adventages />
     </div>
 
@@ -46,7 +46,6 @@ const activeSection = ref('')
 
 const sections = ref<Record<string, HTMLDivElement | null>>({
   about: null,
-  adventages: null,
   reviews: null,
   pricing: null,
 })
@@ -71,7 +70,7 @@ const toggleSignupPopup = () => {
 
 onMounted(() => {
   sections.value.about = document.getElementById('sectionAbout') as HTMLDivElement
-  sections.value.adventages = document.getElementById('sectionAdventages') as HTMLDivElement
+  // sections.value.adventages = document.getElementById('sectionAdventages') as HTMLDivElement
   sections.value.reviews = document.getElementById('sectionReviews') as HTMLDivElement
   sections.value.pricing = document.getElementById('sectionPricing') as HTMLDivElement
   window.addEventListener('scroll', handleScroll)

@@ -25,11 +25,16 @@
   }
   
   .custom-gradient-text-title {
-    background: linear-gradient(to right, #DCD7FF,  90%, #9088C6);
+    background: linear-gradient(90deg, #FFFFFF 0%, #D4CDFF 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
 
+  .custom-gradient-text-title-main {
+    background: linear-gradient(90deg, #DCD7FF 0%, #9088C6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
   
 }
 

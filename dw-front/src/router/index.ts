@@ -9,9 +9,10 @@ const routes = [
     name: 'main'
   },
   { 
-    path: '/profiles/', 
+    path: '/profiles/:userId', 
     component: ProfileView,
-    name: 'profile'
+    name: 'profile',
+    props: true
    },
 ]
 

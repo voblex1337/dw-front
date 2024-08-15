@@ -30,22 +30,22 @@ import Review from '@/components/SingleReview.vue'
 
 const reviews = [
   { text: "With drainwalk you will always defeat everyone, because our cheat bypasses a huge number of anti-cheats. With drainwalk you will always defeat everyone.", 
-  avatar: "/src/assets/img/ReviewsAvatars/avatar1.png"},
+  avatar: "/src/assets/img/ReviewsAvatars/test.jpeg"},
 
   { text: "With drainwalk you will always defeat everyone, because our cheat bypasses a huge number of anti-cheats. With drainwalk you will always defeat everyone.", 
-  avatar: "/src/assets/img/ReviewsAvatars/avatar1.png"},
+  avatar: "/src/assets/img/ReviewsAvatars/test.jpeg"},
 
   { text: "With drainwalk you will always defeat everyone, because our cheat bypasses a huge number of anti-cheats. With drainwalk you will always defeat everyone.", 
-  avatar: "/src/assets/img/ReviewsAvatars/avatar1.png"},
+  avatar: "/src/assets/img/ReviewsAvatars/test.jpeg"},
 
   { text: "With drainwalk you will always defeat everyone, because our cheat bypasses a huge number of anti-cheats. With drainwalk you will always defeat everyone.", 
-  avatar: "/src/assets/img/ReviewsAvatars/avatar1.png"},
+  avatar: "/src/assets/img/ReviewsAvatars/test.jpeg"},
   
   { text: "With drainwalk you will always defeat everyone, because our cheat bypasses a huge number of anti-cheats. With drainwalk you will always defeat everyone.", 
-  avatar: "/src/assets/img/ReviewsAvatars/avatar1.png"},
+  avatar: "/src/assets/img/ReviewsAvatars/test.jpeg"},
 
   { text: "With drainwalk you will always defeat everyone, because our cheat bypasses a huge number of anti-cheats. With drainwalk you will always defeat everyone.", 
-  avatar: "/src/assets/img/ReviewsAvatars/avatar1.png"},
+  avatar: "/src/assets/img/ReviewsAvatars/test.jpeg"},
 ];
 
 

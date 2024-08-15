@@ -46,8 +46,8 @@
                     <span class="custom-gradient-text-title-main">sex123@gmail.com</span>
                 </div>
 
-                <div class="flex flex-row justify-end text-xl gap-x-2">
-                    <span class="custom-gradient-text-title-main">asdasdawe21erqfwdwsqr32rf2fg</span>
+                <div class="flex flex-row justify-end text-xl gap-x-2 ">
+                    <span class="custom-gradient-text-title-main break-words">asdasdawe21erqfwdwsqr32rf2fg</span>
                 </div>
             </div>
 
@@ -55,7 +55,7 @@
     </div>
 </template>
   
-  <script setup lang="ts">
-  
-  </script>
+<script setup lang="ts">
+
+</script>
   

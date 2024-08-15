@@ -2,7 +2,6 @@ import axios, { AxiosError } from 'axios';
 import type { AxiosRequestConfig, AxiosResponse } from 'axios';
 import AuthService from '@/services/AuthService';
 
-// Создание экземпляра axios с базовым URL и заголовками
 const httpClient = axios.create({
   baseURL: 'https://sk3dpages.ru/',
   headers: {
@@ -10,7 +9,6 @@ const httpClient = axios.create({
   },
 });
 
-// Перехватчик для добавления JWT access токена в заголовок запроса
 httpClient.interceptors.request.use(
   (config: AxiosRequestConfig) => {
     const token = AuthService.getJwtToken();
@@ -24,7 +22,6 @@ httpClient.interceptors.request.use(
   }
 );
 
-// Перехватчик для обработки ошибок аутентификации и обновления токенов
 httpClient.interceptors.response.use(
   (response: AxiosResponse) => response,
   async (error: AxiosError) => {
@@ -35,8 +32,7 @@ httpClient.interceptors.response.use(
     if (error.response?.status === 401 && !originalRequest._retry && refreshToken) {
       originalRequest._retry = true;
 
-      try {
-        // Запрос на обновление access токена с использованием refresh токена
+      try {а
         const response = await axios.post<{ access: string }>('https://sk3dpages.ru/api/token/refresh/', {
           refresh: refreshToken,
         });

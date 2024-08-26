@@ -3,10 +3,8 @@ import { ref, computed } from 'vue'
 import axios from 'axios'
 
 export const useUserStore = defineStore('userStore', () => {
-  // Состояние
   const user = ref(null)
 
-  // Действия
   const fetchUser = async (userId: string) => {
     try {
       const response = await axios.get(`http://localhost:3000/api/users/${userId}`)
@@ -16,7 +14,6 @@ export const useUserStore = defineStore('userStore', () => {
     }
   }
 
-  // Геттеры
   const userComputed = computed(() => user.value)
 
   return {

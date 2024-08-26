@@ -7,7 +7,7 @@
       <Title />
     </div>
 
-    <div id="sectionAbout" class="flex items-center justify-center w-full h-screen p-4">
+    <div id="sectionAbout" class="flex items-center justify-center w-full h-fit p-4 overfloiw-hidden">
       <Adventages />
     </div>
 

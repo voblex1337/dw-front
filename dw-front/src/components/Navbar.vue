@@ -57,16 +57,17 @@
 
       <div class="absolute top-1/2 transform -translate-y-1/2 right-[24px] z-50">
 
-        <div class="flex flex-row gap-2.5 z-50" v-if="!getJwtToken">
+        <!-- <div class="flex flex-row gap-2.5 z-50" v-if="!getJwtToken"> -->
+        <div class="flex flex-row gap-2.5 z-50">
           <button class="text-white rounded-md px-4 py-1.5" @click="$emit('open-login-popup')">Login</button>
           <button class="text-white bg-custom-gradient rounded-md px-4 py-1.5" @click="$emit('open-signup-popup')">Sign up</button>
         </div>
 
-        <div class="flex flex-row gap-2.5 z-50">
+        <!-- <div class="flex flex-row gap-2.5 z-50">
           <RouterLink :to="{ name: 'profile', params: { userId: 123 } }">
             <button class="text-white rounded-md px-4 py-1.5">Profile</button>
           </RouterLink>
-        </div>
+        </div> -->
 
       </div>
     </nav>

@@ -9,14 +9,14 @@
             @click="selectPlan(plan)">
             
             <img
-                :src="selectedPlan?.sub_type === plan.sub_type ? selectedDotIcon : dotIcon"
+                :src="subscriptionStore.selectedPlan?.sub_type === plan.sub_type ? selectedDotIcon : dotIcon"
                 alt="dot icon"
                 class="mr-3 w-4 h-4"
             />
             <span
                 :class="[
                 'text-2xl transition-colors duration-200',
-                selectedPlan?.sub_type === plan.sub_type
+                subscriptionStore.selectedPlan?.sub_type === plan.sub_type
                     ? 'text-white'
                     : 'text-custom-white-adventage hover:text-white'
                 ]"
@@ -44,13 +44,13 @@ const plans = ref([
 ]);
 
 const selectedPlan = computed({
-  get: () => subscriptionStore.selectedPlan,
-  set: (plan) => subscriptionStore.selectPlan(plan),
+  get: () => subscriptionStore.selectedPlan
 });
 
+
 const selectPlan = (plan) => {
-  selectedPlan.value = plan;
-  console.log(selectedPlan.value);
+  subscriptionStore.setSubType(plan.sub_type);
+  console.log(subscriptionStore.selectedPlan);
 };
 </script>
 

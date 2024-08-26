@@ -29,7 +29,7 @@
           <div class="relative mb-4">
             <input 
               id="referral"
-              v-model="login" 
+              v-model="ref_code" 
               placeholder="Refferal code" 
               type="text" 
               class="w-full border-gray-300 rounded-md px-10 py-2 bg-custom-back-popup-input custom-border-popup text-white"
@@ -42,7 +42,8 @@
         </div>
 
         <button 
-          class="flex items-center justify-center text-white bg-custom-gradient rounded-md px-4 py-1.5 text-2xl shadow-custom w-full">
+          class="flex items-center justify-center text-white bg-custom-gradient rounded-md px-4 py-1.5 text-2xl shadow-custom w-full"
+          @click="setReferralCode(ref_code)">
           Activate
         </button>
       </div>
@@ -55,18 +56,25 @@ import { computed, ref } from 'vue';
 import { useSubscriptionStore } from '@/stores/SubStore';
 
 const subscriptionStore = useSubscriptionStore();
-
 const isPlanSelected = computed(() => !!subscriptionStore.selectedPlan);
-
 const showModal = ref(false);
 
+const ref_code = ref('')
+
 const handleClick = () => {
-  if (isPlanSelected.value) {
-    showModal.value = true;
-  }
+    if (isPlanSelected.value) {
+        showModal.value = true;
+    }
 };
+
+const setReferralCode = (code) => {
+    subscriptionStore.setRefCode(code);
+    getPayment()
+};
+
+const getPayment = () => {
+    const sub_info = subscriptionStore.selectedPlan
+    console.log(sub_info)
+}
 </script>
 
-<style scoped>
-/* Стили кнопки */
-</style>

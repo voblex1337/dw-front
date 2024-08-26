@@ -36,12 +36,6 @@ import { useSubscriptionStore } from '@/stores/SubStore'
 const subscriptionStore = useSubscriptionStore();
 const selectedPlan = computed(() => subscriptionStore.selectedPlan);
 
-const buySubscription = () => {
-  if (!selectedPlan.value) return;
-
-  console.log('Покупка подписки:', selectedPlan.value);
-};
-
 </script>
 
 <style scoped>

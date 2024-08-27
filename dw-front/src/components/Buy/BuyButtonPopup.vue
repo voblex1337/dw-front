@@ -42,7 +42,7 @@
         </div>
 
         <button 
-          class="flex items-center justify-center text-white bg-custom-gradient rounded-md px-4 py-1.5 text-2xl shadow-custom w-full"
+          class="flex items-center justify-center text-white bg-custom-gradient rounded-md px-4 py-1.5 text-lg shadow-custom w-full"
           @click="setReferralCode(ref_code)">
           Activate
         </button>
@@ -54,6 +54,7 @@
 <script setup>
 import { computed, ref } from 'vue';
 import { useSubscriptionStore } from '@/stores/SubStore';
+import httpClient from '@/services/ApiService';
 
 const subscriptionStore = useSubscriptionStore();
 const isPlanSelected = computed(() => !!subscriptionStore.selectedPlan);
@@ -67,7 +68,18 @@ const handleClick = () => {
     }
 };
 
+const checkReferralCode = (code) => {
+    subscriptionStore.setRefCode(code);
+    getPayment()
+};
+
 const setReferralCode = (code) => {
+    
+    if (checkReferralCode(code)){
+      subscriptionStore.setRefCode(code);
+      getPayment()
+    }
+    
     subscriptionStore.setRefCode(code);
     getPayment()
 };

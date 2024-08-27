@@ -16,7 +16,7 @@
             <div class="flex flex-grow items-center">
                 <img src="../assets/img/Pricing/BuyAvatar.png" class="w-2/12 h-2/12">
                 <SubSelector class="z-50"/>
-                <img src="../assets/img/Dots/PricingDots.png" alt="icon" class="absolute z-0 w-full h-fit"/>
+                <img src="../assets/img/Dots/PricingDots.png" alt="icon" class="absolute z-0 w-full h-fit mr-10"/>
             </div>
 
             <div class="flex justify-center items-center px-20 z-50">

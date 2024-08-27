@@ -8,7 +8,7 @@
     <img src="../assets/img/glow.png" alt="icon" class="absolute z-10 h-3/6 w-9/12"/>
     <img src="../assets/img/Dots/ReviewsDots.png" alt="icon" class="absolute w-full z-0 " />
 
-    <div class="w-full h-64">
+    <div class="px-40 h-64 ">
       <Slider />
     </div>
     

@@ -3,19 +3,19 @@
     <Navbar :activeSection="activeSection" @open-login-popup="toggleLoginPopup" @open-signup-popup="toggleSignupPopup" />
     
     <!-- Ваши секции -->
-    <div id="sectionAbout" class="flex items-center justify-center w-full h-screen" style="background-image: url('../assets/img/Dots.png');">
+    <div id="sectionAbout" class="flex items-center justify-center w-full h-screen px-40" style="background-image: url('../assets/img/Dots.png');">
       <Title />
     </div>
 
-    <div id="sectionAbout" class="flex items-center justify-center w-full h-fit p-4 overfloiw-hidden">
+    <div id="sectionAbout" class="flex items-center justify-center w-full h-fit p-4 overfloiw-hidden px-40">
       <Adventages />
     </div>
 
-    <div id="sectionReviews" class="flex items-center justify-center w-full h-screen">
+    <div id="sectionReviews" class="flex items-center justify-center w-full h-screen px-40 ">
       <Reviews />
     </div>
 
-    <div id="sectionPricing" class="flex items-center justify-center w-full h-screen mb-72">
+    <div id="sectionPricing" class="flex items-center justify-center w-full h-screen mb-72 px-40">
       <Pricing />
     </div>
 

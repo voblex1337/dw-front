@@ -68,8 +68,8 @@
           </div>
 
           <button 
-            class="flex items-center justify-center text-white bg-custom-gradient rounded-md px-4 py-1.5 text-2xl shadow-custom w-full">
-            Login
+            class="flex items-center justify-center text-white bg-custom-gradient rounded-md px-4 py-1.5 text-lg shadow-custom w-full">
+            Sign up
           </button>
 
           <div class="flex flex-row gap-x-2 flex items-center justify-center">

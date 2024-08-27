@@ -1,5 +1,5 @@
 <template>
-    <div class="scroller-container z-50 gap-y-8">
+    <div class="scroller-container z-50 gap-y-8 px-40 overflow-hidden">
       <!-- Верхний скроллер -->
       <div class="scroller" data-direction="left" data-speed="fast">
 

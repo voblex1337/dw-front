@@ -1,78 +1,70 @@
 <template>
-  <div class="fixed w-full z-50 bg-navbar-bg border-bottom-custom bg-opacity-25 backdrop-blur-md">
-    <nav class="relative w-full flex items-center justify-between shadow-dark-mild z-50 nav-border py-2 h-[76px]">
-      <div class="absolute top-1/2 transform -translate-y-1/2 left-[24px]">
+  <div class="fixed w-full z-50 bg-navbar-bg border-bottom-custom bg-opacity-25 backdrop-blur-md lg:px-40 px-5">
+    <nav class="relative max-w-screen-xl mx-auto flex items-center shadow-dark-mild z-50 nav-border py-2 h-[76px]">
+      <!-- Логотип -->
+      <div class="flex-1 flex items-center">
         <a>
           <img class="h-10 w-10 md:h-10 md:w-10 lg:h-10 lg:w-10" src="../assets/img/Avatar.svg" alt="TE Logo" loading="lazy" />
         </a>
       </div>
 
-      <div class="flex w-full items-center px-4 md:px-24 lg:px-36 xl:px-36 2xl:px-36 py-4">
-        <div class="flex flex-row w-full justify-center hidden lg:flex">
+      <!-- Меню страниц -->
+      <RouterLink class="hidden lg:flex flex-1 justify-center" :to="{ name: 'main' }">
+        <div class="flex gap-2.5 text-xl">
+          <a 
+            href="#sectionAbout" 
+            class="menu-item" 
+            :class="{ 'active': activeSection === 'about' }"
+            @click="scrollToSection('about')">
+            About
+            <span v-if="activeSection === 'about'" class="indicator"></span>
+          </a>
 
-          <RouterLink :to="{ name: 'main' }">
-            <div class="flex gap-2.5 text-xl">
+          <a 
+            href="#sectionReviews" 
+            class="menu-item" 
+            :class="{ 'active': activeSection === 'reviews' }"
+            @click="scrollToSection('reviews')">
+            FeedBack
+            <span v-if="activeSection === 'reviews'" class="indicator"></span>
+          </a>
 
-              <a 
-                href="#sectionAbout" 
-                class="menu-item" 
-                :class="{ 'active': activeSection === 'about' }"
-                @click="scrollToSection('about')">
-                About
-                <span v-if="activeSection === 'about'" class="indicator"></span>
-              </a>
+          <a 
+            href="#sectionPricing" 
+            class="menu-item" 
+            :class="{ 'active': activeSection === 'pricing' }"
+            @click="scrollToSection('pricing')">
+            Pricing
+            <span v-if="activeSection === 'pricing'" class="indicator"></span>
+          </a>
 
-              <a 
-                href="#sectionReviews" 
-                class="menu-item" 
-                :class="{ 'active': activeSection === 'reviews' }"
-                @click="scrollToSection('reviews')">
-                FeedBack
-                <span v-if="activeSection === 'reviews'" class="indicator"></span>
-              </a>
-
-              <a 
-                href="#sectionPricing" 
-                class="menu-item" 
-                :class="{ 'active': activeSection === 'pricing' }"
-                @click="scrollToSection('pricing')">
-                Pricing
-                <span v-if="activeSection === 'pricing'" class="indicator"></span>
-              </a>
-
-              <a 
-                href="#sectionFaq" 
-                class="menu-item" 
-                :class="{ 'active': activeSection === 'faq' }"
-                @click="scrollToSection('faq')">
-                FAQ
-                <span v-if="activeSection === 'faq'" class="indicator"></span>
-              </a>
-
-              </div>
-          </RouterLink>
-          
+          <a 
+            href="#sectionFaq" 
+            class="menu-item" 
+            :class="{ 'active': activeSection === 'faq' }"
+            @click="scrollToSection('faq')">
+            FAQ
+            <span v-if="activeSection === 'faq'" class="indicator"></span>
+          </a>
         </div>
+      </RouterLink>
+
+      <!-- Кнопки -->
+      <div class="flex-1 flex justify-end gap-2.5 z-50">
+        <button class="text-white rounded-md px-4 py-1.5" @click="$emit('open-login-popup')">Login</button>
+        <button class="text-white bg-custom-gradient rounded-md px-4 py-1.5" @click="$emit('open-signup-popup')">Sign up</button>
       </div>
 
-      <div class="absolute top-1/2 transform -translate-y-1/2 right-[24px] z-50">
-
-        <!-- <div class="flex flex-row gap-2.5 z-50" v-if="!getJwtToken"> -->
-        <div class="flex flex-row gap-2.5 z-50">
-          <button class="text-white rounded-md px-4 py-1.5" @click="$emit('open-login-popup')">Login</button>
-          <button class="text-white bg-custom-gradient rounded-md px-4 py-1.5" @click="$emit('open-signup-popup')">Sign up</button>
-        </div>
-
-        <!-- <div class="flex flex-row gap-2.5 z-50">
-          <RouterLink :to="{ name: 'profile', params: { userId: 123 } }">
-            <button class="text-white rounded-md px-4 py-1.5">Profile</button>
-          </RouterLink>
-        </div> -->
-
+      <!-- Профиль (если не авторизован) -->
+      <div class="flex flex-row gap-2.5 z-50" v-if="!getJwtToken">
+        <RouterLink :to="{ name: 'profile', params: { userId: 123 } }">
+          <button class="text-white rounded-md px-4 py-1.5">Profile</button>
+        </RouterLink>
       </div>
     </nav>
   </div>
 </template>
+
 
 <script setup lang="ts">
 import { ref } from 'vue'

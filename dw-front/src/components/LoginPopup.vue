@@ -55,7 +55,8 @@
           </div>
 
           <button 
-            class="flex items-center justify-center text-white bg-custom-gradient rounded-md px-4 py-1.5 text-lg shadow-custom w-full">
+            class="flex items-center justify-center text-white bg-custom-gradient rounded-md px-4 py-1.5 text-lg shadow-custom w-full"
+            @click="handleLogin()">
             Log in
           </button>
 
@@ -70,15 +71,30 @@
 </template>
 
 <script setup lang="ts">
-  import { ref, defineEmits } from 'vue'
+    import { ref, defineEmits } from 'vue'
+    import { useRouter } from 'vue-router'; 
 
-  const emit = defineEmits(['close-popup'])
+    import AuthService from '@/services/AuthService';
 
-  const login = ref<string>('')
-  const password = ref<string>('')
+    const emit = defineEmits(['close-popup'])
+    const router = useRouter(); 
 
-  const closePopup = () => {
-    emit('close-popup')
-  }
+    const login = ref<string>('')
+    const password = ref<string>('')
+
+    const closePopup = () => {
+        emit('close-popup')
+    }
+
+    const handleLogin = async () => {
+        try {
+            const username = await AuthService.login(login.value, password.value);
+            console.log('Logged in user:', username);
+
+            router.push({ name: 'profile', params: { username: String(username) } });
+        } catch (error) {
+            console.error('Login failed:', error);
+        }
+    };
 </script>
 

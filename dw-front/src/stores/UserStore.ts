@@ -1,30 +1,26 @@
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
-import axios from 'axios'
+import type { User } from '@/types/user'
+import httpClient from '@/services/ApiService'
 
 export const useUserStore = defineStore('userStore', () => {
-  const user = ref(null)
 
-  const fetchUser = async (userId: string) => {
-    try {
-      const response = await axios.get(`http://localhost:3000/api/users/${userId}`)
-      user.value = response.data
-    } catch (error) {
-      console.log(error)
+    const user = ref<User | null>(null);
+
+    const fetchUser = async (username: string) => {
+        try {
+  
+            const response = await httpClient.get(`stat/get_user/${username}/`);
+            user.value = response.data
+  
+            console.log('User Data:', response.data);
+        } catch (error) {
+            console.error('Error fetching user data:', error);
+        }
     }
-  }
 
-  const userComputed = computed(() => user.value)
-
-  return {
-    user,
-    fetchUser,
-    userComputed,
-  }
-})
-
-
-
-export const userStore = defineStore("userStore", () => {
-
+    return {
+        user,
+        fetchUser,
+    }
 })

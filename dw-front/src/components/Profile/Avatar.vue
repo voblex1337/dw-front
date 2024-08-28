@@ -9,12 +9,12 @@
 
             <div class="relative flex flex-col text-center md:text-left z-10">
                 <div class="flex flex-col md:flex-row gap-y-1 md:gap-x-1 text-3xl">
-                    <!-- <h1 class="text-white">{{ user.username }}</h1> -->
-                    <h1 class="text-white">Jebrik12</h1>
-                    <!-- <h1 class="custom-gradient-text-title-main">[ {{ user.role }}]</h1> -->
-                    <h1 class="custom-gradient-text-title-main">[Designer]</h1>
+                    <h1 class="text-white">{{ user?.username }}</h1>
+                    <!-- <h1 class="text-white">Jebrik12</h1> -->
+                    <h1 class="custom-gradient-text-title-main">[ {{ user?.role }} ]</h1>
+                    <!-- <h1 class="custom-gradient-text-title-main">[Designer]</h1> -->
                 </div>
-                <h1 class="text-[#4F4F53] p-1.5 bg-[#131317] w-fit h-fit rounded-md text-xl">UID: 12</h1>
+                <h1 class="text-[#4F4F53] p-1.5 bg-[#131317] w-fit h-fit rounded-md text-xl">UID: {{ user?.id }}</h1>
             </div>
         </div>
 
@@ -33,20 +33,10 @@
 </template>
 
 <script setup lang="ts">
-
 import { useUserStore } from '@/stores/UserStore'
-import { onMounted } from 'vue'
-import { useRoute } from 'vue-router'
+import { computed } from 'vue';
 
-const route = useRoute()
-const userId = route.params.id as string
-
-const userStore = useUserStore()
-
-onMounted(() => {
-  userStore.fetchUser(userId)
-})
-
-const user = userStore.userComputed
+const userStore = useUserStore();
+const user = computed(() => userStore.user);
 
 </script>

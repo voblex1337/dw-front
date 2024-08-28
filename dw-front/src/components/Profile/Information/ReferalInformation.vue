@@ -20,15 +20,15 @@
   
             <div class="flex flex-col gap-y-4 w-full md:w-fit md:ml-auto">
                 <div class="flex flex-row justify-end text-xl gap-x-2">
-                    <span class="custom-gradient-text-title-main">SEX123</span>
+                    <span class="custom-gradient-text-title-main">{{ user?.refferal_system?.code }}</span>
                 </div>
 
                 <div class="flex flex-row justify-end text-xl gap-x-2">
-                    <span class="custom-gradient-text-title-main">24</span>
+                    <span class="custom-gradient-text-title-main">{{ user?.refferal_system?.refferal_number }}</span>
                 </div>
 
                 <div class="flex flex-row justify-end text-xl gap-x-2">
-                    <span class="custom-gradient-text-title-main">228</span>
+                    <span class="custom-gradient-text-title-main">{{ user?.refferal_system?.refferal_bonus }}</span>
                 </div>
             </div>
         </div>
@@ -36,6 +36,11 @@
 </template>
   
 <script setup lang="ts">
+import { useUserStore } from '@/stores/UserStore'
 
+import { computed } from 'vue';
+
+const userStore = useUserStore();
+const user = computed(() => userStore.user);
 </script>
   

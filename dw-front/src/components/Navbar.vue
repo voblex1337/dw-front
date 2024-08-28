@@ -3,9 +3,9 @@
     <nav class="relative max-w-screen-xl mx-auto flex items-center shadow-dark-mild z-50 nav-border py-2 h-[76px]">
       <!-- Логотип -->
       <div class="flex-1 flex items-center">
-        <a>
+        <router-link :to="{ name: 'main' }">
           <img class="h-10 w-10 md:h-10 md:w-10 lg:h-10 lg:w-10" src="../assets/img/Avatar.svg" alt="TE Logo" loading="lazy" />
-        </a>
+        </router-link>
       </div>
 
       <!-- Меню страниц -->
@@ -49,26 +49,28 @@
         </div>
       </RouterLink>
 
-      <!-- Кнопки -->
-      <div class="flex-1 flex justify-end gap-2.5 z-50">
+      <div class="flex-1 flex justify-end gap-2.5 z-50" v-if="isAuthenticated">
+        <RouterLink :to="{ name: 'profile', params: { username: 'sex' } }">
+          <button class="text-white rounded-md px-4 py-1.5">Profile</button>
+        </RouterLink>
+      </div>
+
+      <div class="flex-1 flex justify-end gap-2.5 z-50" v-else >
         <button class="text-white rounded-md px-4 py-1.5" @click="$emit('open-login-popup')">Login</button>
         <button class="text-white bg-custom-gradient rounded-md px-4 py-1.5" @click="$emit('open-signup-popup')">Sign up</button>
       </div>
 
-      <!-- Профиль (если не авторизован) -->
-      <div class="flex flex-row gap-2.5 z-50" v-if="!getJwtToken">
-        <RouterLink :to="{ name: 'profile', params: { userId: 123 } }">
-          <button class="text-white rounded-md px-4 py-1.5">Profile</button>
-        </RouterLink>
-      </div>
     </nav>
   </div>
 </template>
 
 
 <script setup lang="ts">
-import { ref } from 'vue'
-import getJwtToken from '@/services/AuthService'
+import { computed } from 'vue'
+import AuthService from '@/services/AuthService';
+
+// Создание вычисляемого свойства для проверки аутентификации
+const isAuthenticated = computed(() => AuthService.isAuthenticated());
 
 const props = defineProps<{
   activeSection: string | null

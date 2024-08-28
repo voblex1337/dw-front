@@ -1,13 +1,10 @@
 <template>
   <div class="relative flex-grow space-y-5 p-4">
-    <MainInformation :user="user" />
-    <LaunchInformation :user="user"/>
+    <MainInformation />
+    <LaunchInformation />>
 
-    <ReferalInformation :user="user"/>
-    <ReferalUnvailable/> 
-
-    <!-- <ReferalInformation v-if="user.RefferalAvailable" :user="user"/>
-    <ReferalUnvailable v-else/> -->
+    <ReferalInformation v-if="hasReferralSystem && user?.refferal_system?.refferal_available"/>
+    <ReferalUnvailable v-else/>
 
     <img class="absolute top-0 right-0 h-full z-40 mask-image" src="@/assets/img/Profile/InformationGlow.svg">
 
@@ -21,25 +18,20 @@ import ReferalInformation from '@/components/Profile/Information/ReferalInformat
 import ReferalUnvailable from '@/components/Profile/Information/ReferalUnvailable.vue'
 import { useUserStore } from '@/stores/UserStore'
 
-import { onMounted } from 'vue'
-import { useRoute } from 'vue-router'
+import { computed } from 'vue';
 
-const route = useRoute()
-const userId = route.params.id as string
+const userStore = useUserStore();
+const user = computed(() => userStore.user);
 
-const userStore = useUserStore()
-
-onMounted(() => {
-  userStore.fetchUser(userId)
-})
-
-const user = userStore.userComputed
+const hasReferralSystem = computed(() => {
+    return userStore.user !== null && userStore.user.refferal_system !== undefined;
+});
 
 </script>
 
 <style scoped>
-  .mask-image {
-      -webkit-mask-image: linear-gradient(to right, transparent, black 50%, transparent);
-      mask-image: linear-gradient(to right, transparent, black 50%, transparent);
+    .mask-image {
+        -webkit-mask-image: linear-gradient(to right, transparent, black 50%, transparent);
+        mask-image: linear-gradient(to right, transparent, black 50%, transparent);
   }
 </style>

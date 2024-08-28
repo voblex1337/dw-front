@@ -9,7 +9,7 @@ const routes = [
     name: 'main'
   },
   { 
-    path: '/profiles/:userId', 
+    path: '/profiles/:username', 
     component: ProfileView,
     name: 'profile',
     props: true

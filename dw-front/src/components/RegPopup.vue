@@ -68,7 +68,8 @@
           </div>
 
           <button 
-            class="flex items-center justify-center text-white bg-custom-gradient rounded-md px-4 py-1.5 text-lg shadow-custom w-full">
+            class="flex items-center justify-center text-white bg-custom-gradient rounded-md px-4 py-1.5 text-lg shadow-custom w-full"
+            @click="register()">
             Sign up
           </button>
 
@@ -84,23 +85,31 @@
 </template>
 
 <script setup lang="ts">
-  import { ref, defineEmits } from 'vue'
+    import { ref, defineEmits } from 'vue'
+    import { useRouter } from 'vue-router'; 
 
-  // Определяем эмиты
-  const emit = defineEmits(['close-popup'])
+    import AuthService from '@/services/AuthService';
 
-  // login и password
-  const username = ref<string>('')
-  const email = ref<string>('')
-  const password = ref<string>('')
+    const emit = defineEmits(['close-popup'])
+    const router = useRouter(); 
 
-  // Закрытие модального окна и уведомление родителя
-  const closePopup = () => {
-    emit('close-popup')
-  }
+    const username = ref<string>('')
+    const email = ref<string>('')
+    const password = ref<string>('')
+
+    const closePopup = () => {
+        emit('close-popup')
+    }
+
+    const register = async () => {
+        try {
+            await AuthService.register(username.value, password.value, email.value);
+            console.log('Registration successful!');
+
+            router.push({ name: 'profile', params: { username: username.value } });
+        } catch (error) {
+            console.error('Registration failed:', error);
+        }
+    };
 </script>
 
-<style scoped>
-/* Стили для иконок и отступов */
-
-</style>

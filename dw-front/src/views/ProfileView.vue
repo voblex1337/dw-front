@@ -5,6 +5,8 @@
     <div class="flex flex-wrap w-full h-full px-8 mt-[95px] gap-x-2">
       <Avatar />
       <Information />
+
+      <notifications group="success"  position="bottom left" class="z-50"/>
     </div>
 
     <Footer />
@@ -12,8 +14,9 @@
 </template>
 
 <script setup lang="ts">
-import { onMounted } from 'vue';
+import { onMounted, ref, computed } from 'vue';
 import { useRoute } from 'vue-router';
+import { notify } from "@kyvg/vue3-notification";
 
 import Navbar from '../components/Navbar.vue';
 import Footer from '@/components/Footer.vue';
@@ -35,7 +38,16 @@ onMounted(() => {
     } else {
         userStore.fetchUser(username);
     }
-})
 
+    if (sessionStorage.getItem('passwordChanged') === 'true') {
+        notify({
+            group: "success",
+            type: "success",
+            title: "Change Password",
+            text: "Пароль успешно изменен.",
+        });
+        sessionStorage.removeItem('passwordChanged');
+    }
+})
 
 </script>

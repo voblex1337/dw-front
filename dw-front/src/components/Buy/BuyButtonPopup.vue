@@ -24,7 +24,11 @@
         <div>
           <div class="flex flex-row items-center justify-between">
             <label for="referral" class="block text-white mb-1">Refferal code</label>
-            <a href="#" class="text-[#A39BD6]">No code? Do nothing</a>
+            <a
+                class="text-[#A39BD6]"
+                @click="getPayment()">
+                No code? Do nothing
+            </a>
           </div>
           <div class="relative mb-4">
             <input 
@@ -49,10 +53,15 @@
       </div>
     </div>
   </div>
+
+  <notifications group="refferal" position="bottom left" class="z-50"/>
+
 </template>
 
 <script setup>
 import { computed, ref } from 'vue';
+import { notify } from "@kyvg/vue3-notification";
+
 import { useSubscriptionStore } from '@/stores/SubStore';
 import httpClient from '@/services/ApiService';
 
@@ -68,25 +77,47 @@ const handleClick = () => {
     }
 };
 
-const checkReferralCode = (code) => {
-    subscriptionStore.setRefCode(code);
-    getPayment()
+const checkReferralCode = async (code) => {
+    try {
+        await httpClient.get('stat/check_ref/', {
+            params: { code: code }
+        });
+        return true; 
+    } catch (error) {
+        console.error('Error checking referral code:', error);
+        return false;
+    }
 };
 
-const setReferralCode = (code) => {
+const setReferralCode = async (code) => {
+    const isValid = await checkReferralCode(code);
     
-    if (checkReferralCode(code)){
-      subscriptionStore.setRefCode(code);
-      getPayment()
+    if (isValid) {
+        subscriptionStore.setRefCode(code);
+        console.log(subscriptionStore);
+        notify({
+            group: "refferal",
+            type: "success",
+            title: "Success",
+            text: "Refferal code activated",
+        });
+        getPayment();
+    } else {
+        console.log("error");
+        notify({
+            group: "refferal",
+            type: "error",
+            title: "Error",
+            text: "No such refferal code!",
+        });
     }
     
-    subscriptionStore.setRefCode(code);
-    getPayment()
+    getPayment();
 };
 
 const getPayment = () => {
     const sub_info = subscriptionStore.selectedPlan
-    console.log(sub_info)
+    console.log("ПЕЙМЕНТ!")
 }
 </script>
 

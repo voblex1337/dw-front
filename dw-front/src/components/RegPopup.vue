@@ -49,7 +49,6 @@
           <div class=" mb-4">
             <div class="flex flex-row items-center justify-between">
               <label for="password" class="block text-white mb-1">Password</label>
-              <a href="" class="custom-gradient-text-title">Forgot Password?</a>
             </div>
             <div class="relative">
               <input 

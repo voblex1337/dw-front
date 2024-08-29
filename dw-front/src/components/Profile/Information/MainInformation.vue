@@ -1,5 +1,5 @@
 <template>
-    <div class="flex-grow space-y-5">
+    <div class="flex-grow space-y-5 z-50">
         <div class="bg-custom-black-adventage border-bottom-custom-adventage rounded-xl flex flex-col md:flex-row p-5 w-full">
 
             <div class="flex flex-col gap-y-4 w-full md:w-fit">
@@ -34,7 +34,7 @@
                 </div>
             </div>
   
-            <div class="flex flex-col gap-y-4 w-full md:w-fit md:ml-auto">
+            <div class="flex flex-col gap-y-4 w-full md:w-fit md:ml-auto z-50">
                 <div class="flex flex-row justify-end text-xl gap-x-2">
                     <span class="custom-gradient-text-title-main">{{ formatDate(user?.statistics?.reg_date) }}</span>
                 </div>
@@ -53,6 +53,7 @@
 
                 <div v-if="user?.email" class="flex flex-row justify-end text-xl gap-x-2">
                     <span class="custom-gradient-text-title-main">****</span>
+                    <PasswordPopup />
                 </div>
 
                 <div v-if="user?.hwid" class="flex flex-row justify-end text-xl gap-x-2">
@@ -66,6 +67,7 @@
   
 <script setup lang="ts">
 import { useUserStore } from '@/stores/UserStore'
+import PasswordPopup from '../PasswordPopup.vue';
 
 import { computed } from 'vue';
 

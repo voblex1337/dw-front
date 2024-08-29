@@ -6,7 +6,7 @@
     <ReferalInformation v-if="hasReferralSystem && user?.refferal_system?.refferal_available"/>
     <ReferalUnvailable v-else/>
 
-    <img class="absolute top-0 right-0 h-full z-40 mask-image" src="@/assets/img/Profile/InformationGlow.svg">
+    <img class="absolute top-0 right-0 h-full z-10 mask-image" src="@/assets/img/Profile/InformationGlow.svg">
 
   </div>
 </template>

@@ -20,13 +20,21 @@ import Footer from '@/components/Footer.vue';
 import Avatar from '@/components/Profile/Avatar.vue';
 import Information from '@/components/Profile/Information.vue';
 import { useUserStore } from '@/stores/UserStore'
+import AuthService from '@/services/AuthService';
 
 const route = useRoute()
 const userStore = useUserStore()
 
+
 onMounted(() => {
     const username = route.params.username as string
-    userStore.fetchUser(username)
+    const currentUser = AuthService.getUsername();
+
+    if (username === currentUser) {
+        userStore.fetchPrivateUserInfo();
+    } else {
+        userStore.fetchUser(username);
+    }
 })
 
 

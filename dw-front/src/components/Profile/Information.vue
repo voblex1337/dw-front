@@ -1,7 +1,7 @@
 <template>
   <div class="relative flex-grow space-y-5 p-4">
     <MainInformation />
-    <LaunchInformation />>
+    <LaunchInformation />
 
     <ReferalInformation v-if="hasReferralSystem && user?.refferal_system?.refferal_available"/>
     <ReferalUnvailable v-else/>

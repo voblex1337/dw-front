@@ -1,6 +1,13 @@
 import httpClient from './ApiService';
 
 class AuthService {
+  setUsername(username: string): void {
+    localStorage.setItem('username', username);
+  }
+  getUsername(): string | null {
+    return localStorage.getItem('username');
+  }
+
   setJwtToken(token: string): void {
     localStorage.setItem('jwtToken', token);
   }
@@ -33,6 +40,8 @@ class AuthService {
         email,
       });
       const { access, refresh } = response.data;
+      this.setUsername(username);
+
 
       this.setJwtToken(access);
       this.setRefreshToken(refresh);
@@ -55,29 +64,11 @@ class AuthService {
       this.setRefreshToken(refresh);
 
       const username = response.data.username; 
+      this.setUsername(username);
       return username;
       
     } catch (error) {
       console.error('Login failed:', error);
-      throw error;
-    }
-  }
-
-  // Обновление токена
-  async refreshAccessToken(): Promise<void> {
-    try {
-      const refreshToken = this.getRefreshToken();
-      if (!refreshToken) throw new Error('No refresh token available');
-
-      const response = await httpClient.post('/auth/refresh/', {
-        refresh: refreshToken,
-      });
-      const { access } = response.data;
-
-      this.setJwtToken(access);
-    } catch (error) {
-      console.error('Token refresh failed:', error);
-      this.clearTokens();
       throw error;
     }
   }

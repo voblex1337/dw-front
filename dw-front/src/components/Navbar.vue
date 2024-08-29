@@ -50,7 +50,7 @@
       </RouterLink>
 
       <div class="flex-1 flex justify-end gap-2.5 z-50" v-if="isAuthenticated">
-        <RouterLink :to="{ name: 'profile', params: { username: 'sex' } }">
+        <RouterLink :to="{ name: 'profile', params: { username: getUsername } }">
           <button class="text-white rounded-md px-4 py-1.5">Profile</button>
         </RouterLink>
       </div>
@@ -71,6 +71,7 @@ import AuthService from '@/services/AuthService';
 
 // Создание вычисляемого свойства для проверки аутентификации
 const isAuthenticated = computed(() => AuthService.isAuthenticated());
+const getUsername = computed(() => AuthService.getUsername());
 
 const props = defineProps<{
   activeSection: string | null

@@ -7,7 +7,7 @@ export interface Subscription {
   export interface Statistics {
     launch_number: number;
     playtime: string;
-    last_launch: string | null;
+    last_launch: string;
     reg_date: string;
   }
   
@@ -21,8 +21,8 @@ export interface Subscription {
   export interface User {
     id: number;
     username: string;
-    email: string;
-    hwid: string | null;
+    email?: string;
+    hwid?: string | null;
     role: string;
     subscription?: Subscription;
     statistics?: Statistics;

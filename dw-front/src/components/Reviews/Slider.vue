@@ -18,7 +18,7 @@
           <Review v-for="(review, index) in reviews" :review="review"/>
 
           <Review v-for="(review, index) in reviews" :review="review"/>
-          <img src="../assets/img/glow.png" alt="icon" class="absolute z-50"/>
+          <img src="@/assets/img/glow.png" alt="icon" class="absolute z-50"/>
         </div>
       </div>
     </div>
@@ -26,7 +26,7 @@
 
 <script lang="ts" setup>
 import { onMounted } from 'vue';
-import Review from '@/components/SingleReview.vue'
+import Review from '@/components/Reviews/SingleReview.vue'
 
 const reviews = [
   { text: "With drainwalk you will always defeat everyone, because our cheat bypasses a huge number of anti-cheats. With drainwalk you will always defeat everyone.", 

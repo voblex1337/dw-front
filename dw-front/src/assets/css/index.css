@@ -35,7 +35,30 @@
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
+
+  .faq-date-text {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.5) 0%, rgba(212, 205, 255, 0.5) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
   
+}
+
+@layer base {
+  /* Скрываем полосу прокрутки в браузерах на основе Webkit (Chrome, Safari, Edge) */
+  ::-webkit-scrollbar {
+      display: none;
+  }
+
+  /* Скрываем полосу прокрутки в Firefox */
+  html {
+      scrollbar-width: none; /* Firefox */
+  }
+
+  /* Обязательно оставить возможность прокрутки */
+  body {
+      overflow-y: scroll;
+  }
 }
 
 body {

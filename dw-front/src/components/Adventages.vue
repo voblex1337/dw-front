@@ -58,7 +58,7 @@
       </div>
 
       <!-- Статистика -->
-      <div class="flex flex-wrap justify-center gap-6 md:gap-x-28 gap-y-4 z-40">
+      <div class="flex flex-wrap justify-center gap-6 md:gap-x-28 gap-y-4 z-10">
 
         <span class="text-white flex flex-row text-xl items-center gap-2">
           <img src="../assets/img/Adventages/Users.png" alt="Users icon" class="w-6 h-6">

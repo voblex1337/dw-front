@@ -1,16 +1,19 @@
 <template>
-  <main class="relative min-h-screen select-none overflow-hidden pb-40" ref="main">
-    <Navbar :activeSection="null" />
-    
-    <div class="flex flex-wrap w-full h-full px-8 mt-[95px] gap-x-2">
-      <Avatar />
-      <Information />
+    <main class="relative min-h-screen overflow-hidden pb-40" ref="main">
+        <Navbar :activeSection="null" @open-login-popup="toggleLoginPopup" @open-signup-popup="toggleSignupPopup" />
+      
+        <div class="flex flex-wrap w-full h-full px-8 mt-[95px] gap-x-2">
 
-      <notifications group="success"  position="bottom left" class="z-50"/>
-    </div>
+            <Avatar />
+            <Information />
 
-    <Footer />
-  </main>
+            <notifications group="success"  position="bottom left" class="z-50"/>
+        </div>
+
+        <LoginPopup v-if="showLoginPopup" @close-popup="toggleLoginPopup" />
+        <SignupPopup v-if="showSignupPopup" @close-popup="toggleSignupPopup" />
+        <Footer />
+    </main>
 </template>
 
 <script setup lang="ts">
@@ -25,9 +28,21 @@ import Information from '@/components/Profile/Information.vue';
 import { useUserStore } from '@/stores/UserStore'
 import AuthService from '@/services/AuthService';
 
+import LoginPopup from '@/components/AuthPopups/LoginPopup.vue'
+import SignupPopup from '@/components/AuthPopups/RegPopup.vue'
+
 const route = useRoute()
 const userStore = useUserStore()
 
+const showLoginPopup = ref(false)
+const showSignupPopup = ref(false)
+
+const toggleLoginPopup = () => {
+  showLoginPopup.value = !showLoginPopup.value
+}
+const toggleSignupPopup = () => {
+  showSignupPopup.value = !showSignupPopup.value
+}
 
 onMounted(() => {
     const username = route.params.username as string

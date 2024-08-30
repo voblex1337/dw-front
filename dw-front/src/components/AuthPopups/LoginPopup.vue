@@ -21,7 +21,7 @@
                 class="w-full border-gray-300 rounded-md px-10 py-2 bg-custom-back-popup-input custom-border-popup text-white"
               >
               <img 
-                src="../assets/img/icons/Auth/user.png" 
+                src="@/assets/img/icons/Auth/user.png" 
                 alt="User Icon" 
                 class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5"
               >
@@ -42,7 +42,7 @@
                 class="w-full border-gray-300 rounded-md pl-10 py-2 bg-custom-back-popup-input custom-border-popup text-white"
               >
               <img 
-                src="../assets/img/icons/Auth/lock.png" 
+                src="@/assets/img/icons/Auth/lock.png" 
                 alt="Lock Icon" 
                 class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5"
               >
@@ -75,6 +75,9 @@
     import { useRouter } from 'vue-router'; 
 
     import AuthService from '@/services/AuthService';
+    import { useUserStore } from '@/stores/UserStore'
+
+    const store = useUserStore()
 
     const emit = defineEmits(['close-popup'])
     const router = useRouter(); 
@@ -87,14 +90,18 @@
     }
 
     const handleLogin = async () => {
-        try {
-            const username = await AuthService.login(login.value, password.value);
-            console.log('Logged in user:', username);
+    try {
+        const username = await AuthService.login(login.value, password.value);
+        console.log('Logged in user:', username);
 
-            router.push({ name: 'profile', params: { username: String(username) } });
-        } catch (error) {
-            console.error('Login failed:', error);
-        }
-    };
+        await store.fetchPrivateUserInfo();
+
+        closePopup()
+        router.push({ name: 'profile', params: { username: String(username) } });
+    } catch (error) {
+        console.error('Login failed:', error);
+    }
+};
+
 </script>
 

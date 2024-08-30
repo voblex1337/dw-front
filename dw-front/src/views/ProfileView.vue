@@ -61,9 +61,19 @@ onMounted(() => {
             group: "success",
             type: "success",
             title: "Change Password",
-            text: "Пароль успешно изменен.",
+            text: "Password changed successfully",
         });
         sessionStorage.removeItem('passwordChanged');
+    }
+
+    if (sessionStorage.getItem('keyActivated') === 'true') {
+        notify({
+            group: "success",
+            type: "success",
+            title: "Key activation",
+            text: "Key activated successfully",
+        });
+        sessionStorage.removeItem('keyActivated');
     }
 })
 

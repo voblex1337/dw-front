@@ -1,6 +1,6 @@
 <template>
     <div class="fixed w-full z-40 bg-navbar-bg border-bottom-custom bg-opacity-25 backdrop-blur-md lg:px-40 px-5">
-        <img src="@/assets/img/NavbarGlow.svg" class="absolute">
+        <img src="@/assets/img/NavbarGlow.svg" class="absolute z-0 pointer-events-none">
         <nav class="relative max-w-screen-xl mx-auto flex items-center shadow-dark-mild z-50 nav-border py-2 h-[76px]">
             
             <!-- Логотип -->

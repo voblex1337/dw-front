@@ -18,8 +18,8 @@
             <Pricing />
         </div>
 
-        <LoginPopup v-if="showLoginPopup" @close-popup="toggleLoginPopup" />
-        <SignupPopup v-if="showSignupPopup" @close-popup="toggleSignupPopup" />
+        <LoginPopup v-if="showLoginPopup" @close-popup="toggleLoginPopup" @open-signup="toggleSignupPopup"/>
+        <SignupPopup v-if="showSignupPopup" @close-popup="toggleSignupPopup" @open-login="toggleLoginPopup"/>
         <Footer />
     </main>
 </template>
@@ -60,10 +60,11 @@ const handleScroll = () => {
 }
 
 const toggleLoginPopup = () => {
+    showSignupPopup.value = false
     showLoginPopup.value = !showLoginPopup.value
 }
-
 const toggleSignupPopup = () => {
+    showLoginPopup.value = false
     showSignupPopup.value = !showSignupPopup.value
 }
 

@@ -40,14 +40,14 @@
                         <span v-if="activeSection === 'pricing'" class="indicator"></span>
                     </a>
 
-                    <a 
-                        href="#sectionFaq" 
-                        class="menu-item" 
+                    <RouterLink 
                         :class="{ 'active': activeSection === 'faq' }"
-                        @click="scrollToSection('faq')">
+                        class="menu-item" 
+                        :to="{name: 'faq', params: { element: 'privacy_policy' } }">
                         FAQ
                         <span v-if="activeSection === 'faq'" class="indicator"></span>
-                    </a>
+                    </RouterLink>
+                    
                 </div>
             </RouterLink>
 
@@ -68,7 +68,9 @@
 
 
 <script setup lang="ts">
+import { ref, defineEmits } from 'vue'
 import { computed } from 'vue'
+
 import AuthService from '@/services/AuthService';
 
 const isAuthenticated = computed(() => AuthService.isAuthenticated());
@@ -77,6 +79,7 @@ const getUsername = computed(() => AuthService.getUsername());
 const props = defineProps<{
     activeSection: string | null
 }>()
+
 
 const scrollToSection = (section: string) => {
     const element = document.getElementById(`section${section.charAt(0).toUpperCase() + section.slice(1)}`)

@@ -10,6 +10,8 @@
             <RulesOfUse v-if="showElement === 'rules_of_use'" class="z-30"/>
         </div>
     
+        <LoginPopup v-if="showLoginPopup" @close-popup="toggleLoginPopup" @open-signup="toggleSignupPopup"/>
+        <SignupPopup v-if="showSignupPopup" @close-popup="toggleSignupPopup" @open-login="toggleLoginPopup"/>
         <Footer />
     </main>
 </template>
@@ -20,6 +22,8 @@ import RulesOfUse from '@/components/Faqs/RulesOfUse.vue';
 import TermsOfService from '@/components/Faqs/TermsOfService.vue';
 import Navbar from '@/components/Navbar.vue';
 import Footer from '@/components/Footer.vue';
+import LoginPopup from '@/components/AuthPopups/LoginPopup.vue'
+import SignupPopup from '@/components/AuthPopups/RegPopup.vue'
 
 import { computed, ref, watch } from 'vue';
 import { useRoute } from 'vue-router';
@@ -30,11 +34,13 @@ const showElement = computed(() => String(route.params.element));
 const showLoginPopup = ref(false);
 const showSignupPopup = ref(false);
 const toggleLoginPopup = () => {
-    showLoginPopup.value = !showLoginPopup.value;
-};
+    showSignupPopup.value = false
+    showLoginPopup.value = !showLoginPopup.value
+}
 const toggleSignupPopup = () => {
-    showSignupPopup.value = !showSignupPopup.value;
-};
+    showLoginPopup.value = false
+    showSignupPopup.value = !showSignupPopup.value
+}
 
 // Watch шо бы наверх скролить когда чел переключается между faq'юшками
 watch(route, () => {

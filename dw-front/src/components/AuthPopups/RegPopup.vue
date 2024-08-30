@@ -74,7 +74,7 @@
 
           <div class="flex flex-row gap-x-2 flex items-center justify-center">
               <span class="text-white">Already have an account?</span>
-              <a href="" class="text-main">Login</a>
+              <a href="" class="text-main" @click.prevent="openLogin">Login</a>
           </div>
         </div>
 
@@ -92,7 +92,7 @@
 
     const store = useUserStore()
 
-    const emit = defineEmits(['close-popup'])
+    const emit = defineEmits(['close-popup', 'open-login'])
     const router = useRouter(); 
 
     const username = ref<string>('')
@@ -101,6 +101,9 @@
 
     const closePopup = () => {
         emit('close-popup')
+    }
+    const openLogin = () => {
+        emit('open-login')
     }
 
     const register = async () => {

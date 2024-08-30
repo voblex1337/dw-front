@@ -10,8 +10,8 @@
             <notifications group="success"  position="bottom left" class="z-50"/>
         </div>
 
-        <LoginPopup v-if="showLoginPopup" @close-popup="toggleLoginPopup" />
-        <SignupPopup v-if="showSignupPopup" @close-popup="toggleSignupPopup" />
+        <LoginPopup v-if="showLoginPopup" @close-popup="toggleLoginPopup" @open-signup="toggleSignupPopup"/>
+        <SignupPopup v-if="showSignupPopup" @close-popup="toggleSignupPopup" @open-login="toggleLoginPopup"/>
         <Footer />
     </main>
 </template>
@@ -38,10 +38,12 @@ const showLoginPopup = ref(false)
 const showSignupPopup = ref(false)
 
 const toggleLoginPopup = () => {
-  showLoginPopup.value = !showLoginPopup.value
+    showSignupPopup.value = false
+    showLoginPopup.value = !showLoginPopup.value
 }
 const toggleSignupPopup = () => {
-  showSignupPopup.value = !showSignupPopup.value
+    showLoginPopup.value = false
+    showSignupPopup.value = !showSignupPopup.value
 }
 
 onMounted(() => {

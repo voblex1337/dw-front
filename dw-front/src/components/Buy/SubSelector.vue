@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-col gap-y-4 ml-16">
+    <div class="flex flex-col gap-y-4 ml-16 my-10">
         <h1 class="custom-gradient-text-title text-3xl mb-4">DrainWalk</h1>
 
         <div

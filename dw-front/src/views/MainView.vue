@@ -2,19 +2,19 @@
     <main class="relative min-h-screen select-none overflow-hidden" @scroll="handleScroll" ref="main">
         <Navbar :activeSection="activeSection" @open-login-popup="toggleLoginPopup" @open-signup-popup="toggleSignupPopup" />
         
-        <div id="sectionAbout" class="flex items-center justify-center w-full h-screen px-40">
+        <div id="sectionAbout" class="flex items-center justify-center w-full h-screen lg:px-40">
             <Title />
         </div>
 
-        <div id="sectionAbout" class="flex items-center justify-center w-full h-fit p-4 overfloiw-hidden px-40">
+        <div id="sectionAbout" class="flex items-center justify-center w-full h-fit p-4 overfloiw-hidden lg:px-40">
             <Adventages />
         </div>
 
-        <div id="sectionReviews" class="flex items-center justify-center w-full h-screen px-40 ">
+        <div id="sectionReviews" class="flex items-center justify-center w-full h-screen lg:px-40 ">
             <Reviews />
         </div>
 
-        <div id="sectionPricing" class="flex items-center justify-center w-full h-screen mb-72 px-40">
+        <div id="sectionPricing" class="flex items-center justify-center w-full h-screen mb-72 lg:px-40">
             <Pricing />
         </div>
 

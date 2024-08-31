@@ -1,12 +1,12 @@
 <template>
   <div class="relative flex-grow space-y-5 p-4">
     <MainInformation />
-    <LaunchInformation />
+    <LaunchInformation v-if="user?.role !== 'VISITOR'"/>
 
     <ReferalInformation v-if="hasReferralSystem && user?.refferal_system?.refferal_available"/>
     <ReferalUnvailable v-else/>
 
-    <img class="absolute top-0 right-0 h-full z-10 mask-image" src="@/assets/img/Profile/InformationGlow.svg">
+    <img class="absolute top-0 right-0 h-full z-10 mask-image pointer-events-none" src="@/assets/img/Profile/InformationGlow.svg">
 
   </div>
 </template>

@@ -8,6 +8,8 @@
             <Information />
 
             <notifications group="success"  position="bottom left" class="z-50"/>
+            <notifications group="nahui"  position="bottom left" class="z-50"/>
+
         </div>
 
         <LoginPopup v-if="showLoginPopup" @close-popup="toggleLoginPopup" @open-signup="toggleSignupPopup"/>

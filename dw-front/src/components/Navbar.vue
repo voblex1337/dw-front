@@ -6,7 +6,7 @@
             <!-- Логотип -->
             <div class="flex-1 flex items-center">
             <router-link :to="{ name: 'main' }">
-                <img class="h-10 w-10 md:h-10 md:w-10 lg:h-10 lg:w-10" src="../assets/img/Avatar.svg" alt="TE Logo" loading="lazy" />
+                <img class="h-10 w-10 md:h-10 md:w-10 lg:h-10 lg:w-10 hover:animate-pulse" src="../assets/img/Avatar.svg" alt="TE Logo" loading="lazy" />
             </router-link>
             </div>
 

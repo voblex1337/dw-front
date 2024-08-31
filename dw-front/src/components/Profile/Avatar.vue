@@ -52,6 +52,7 @@ import { useUserStore } from '@/stores/UserStore'
 import { useRouter } from 'vue-router';
 import { computed } from 'vue';
 
+import { notify } from "@kyvg/vue3-notification";
 import AuthService from '@/services/AuthService';
 import KeyPopup from './KeyPopup.vue';
 
@@ -61,15 +62,22 @@ const router = useRouter();
 const user = computed(() => userStore.user);
 
 const download = () => {
-    console.log("downloading")
+    notify({
+            group: "nahui",
+            type: "error",
+            title: "Download error",
+            text: "Not available now :(",
+        });
 }
 const beta = () => {
-    console.log("buy beta")
+    notify({
+            group: "nahui",
+            type: "error",
+            title: "Buying Beta error",
+            text: "Not available now :(",
+        });
 }
 
-const activateKey = () => {
-    console.log("activate")
-}
 const signOut = async () => {
     try {
         AuthService.logout(); 

@@ -14,7 +14,7 @@
   
         <div class="flex flex-wrap justify-between w-full z-10 bg-[#09090D] bg-opacity-30 rounded-xl overflow-hidden custom-border">
             <div class="flex flex-grow items-center">
-                <img src="@/assets/img/Pricing/BuyAvatar.png" class="w-2/12 h-2/12">
+                <img src="@/assets/img/Pricing/BuyAvatar.png" class="lg:w-[200] lg:h-[276px] w-2/12 h-2/12">
                 <SubSelector class="z-50"/>
                 <img src="@/assets/img/Dots/PricingDots.png" alt="icon" class="absolute z-0 w-full h-fit mr-10"/>
             </div>

@@ -15,11 +15,11 @@
       <div class="scroller" data-direction="right" data-speed="fast">
 
         <div class="scroller__inner">
-          <Review v-for="(review, index) in reviews" :review="review"/>
+          <Review v-for="(review,) in reviews" :review="review"/>
 
-          <Review v-for="(review, index) in reviews" :review="review"/>
-          <img src="@/assets/img/glow.png" alt="icon" class="absolute z-50"/>
+          <Review v-for="(review,) in reviews" :review="review"/>
         </div>
+        
       </div>
     </div>
   </template>
@@ -29,23 +29,35 @@ import { onMounted } from 'vue';
 import Review from '@/components/Reviews/SingleReview.vue'
 
 const reviews = [
-  { text: "With drainwalk you will always defeat everyone, because our cheat bypasses a huge number of anti-cheats. With drainwalk you will always defeat everyone.", 
-  avatar: "/src/assets/img/ReviewsAvatars/test.jpeg"},
+    { 
+        text: "Drainwalk keeps me ahead of the game! Even the most advanced anti-cheats can't stop me now.",
+        avatar: "/src/assets/img/ReviewsAvatars/test.jpeg"
+    },
 
-  { text: "With drainwalk you will always defeat everyone, because our cheat bypasses a huge number of anti-cheats. With drainwalk you will always defeat everyone.", 
-  avatar: "/src/assets/img/ReviewsAvatars/test.jpeg"},
+    { 
+        text: "I've been using Drainwalk for months and haven't been caught once! Highly recommend it to anyone who wants to dominate.",
+        avatar: "/src/assets/img/ReviewsAvatars/test.jpeg"
+    },
 
-  { text: "With drainwalk you will always defeat everyone, because our cheat bypasses a huge number of anti-cheats. With drainwalk you will always defeat everyone.", 
-  avatar: "/src/assets/img/ReviewsAvatars/test.jpeg"},
+    { 
+        text: "I never thought it would be this easy to bypass all the anti-cheats. Drainwalk is a game-changer!",
+        avatar: "/src/assets/img/ReviewsAvatars/test.jpeg"
+    },
 
-  { text: "With drainwalk you will always defeat everyone, because our cheat bypasses a huge number of anti-cheats. With drainwalk you will always defeat everyone.", 
-  avatar: "/src/assets/img/ReviewsAvatars/test.jpeg"},
-  
-  { text: "With drainwalk you will always defeat everyone, because our cheat bypasses a huge number of anti-cheats. With drainwalk you will always defeat everyone.", 
-  avatar: "/src/assets/img/ReviewsAvatars/test.jpeg"},
+    { 
+        text: "Now I'm always at the top of the leaderboard. Thanks to Drainwalk for giving me the edge!",
+        avatar: "/src/assets/img/ReviewsAvatars/test.jpeg"
+    },
 
-  { text: "With drainwalk you will always defeat everyone, because our cheat bypasses a huge number of anti-cheats. With drainwalk you will always defeat everyone.", 
-  avatar: "/src/assets/img/ReviewsAvatars/test.jpeg"},
+    { 
+        text: "Thanks to Drainwalk, the game has become so much more fun! No more fear of getting banned.",
+        avatar: "/src/assets/img/ReviewsAvatars/test.jpeg"
+    },
+
+    { 
+        text: "A reliable tool that truly works. Drainwalk is the best cheat I've ever used!",
+        avatar: "/src/assets/img/ReviewsAvatars/test.jpeg"
+    },
 ];
 
 
@@ -119,7 +131,7 @@ onMounted(() => {
 }
 
 .scroller[data-speed="slow"] {
-  --_animation-duration: 50s; /* Ускорили до такой же скорости, как верхний скроллер */
+  --_animation-duration: 50s;
 }
 
 @keyframes scroll {

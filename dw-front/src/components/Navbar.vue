@@ -43,7 +43,7 @@
                     <RouterLink 
                         :class="{ 'active': activeSection === 'faq' }"
                         class="menu-item" 
-                        :to="{name: 'faq', params: { element: 'privacy_policy' } }">
+                        :to="{name: 'faq'}">
                         FAQ
                         <span v-if="activeSection === 'faq'" class="indicator"></span>
                     </RouterLink>

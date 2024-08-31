@@ -3,8 +3,8 @@
 </script>
 
 <template>
-
-    <RouterView />
+    
+    <RouterView class="notranslate"/>
 
 </template>
 

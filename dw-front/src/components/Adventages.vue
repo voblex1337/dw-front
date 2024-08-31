@@ -7,8 +7,8 @@
       <h1 class="text-center text-6xl custom-gradient-text-title">Why DrainWalk?</h1>
     </div>
 
-    <img src="../assets/img/glow.png" alt="icon" class="absolute z-10 h-1/4"/>
-    <img src="../assets/img/Dots/AdventagesDots.png" alt="icon" class="absolute w-full z-0 " />
+    <img src="../assets/img/glow.png" alt="icon" class="absolute z-10 h-1/4 pointer-events-none"/>
+    <img src="../assets/img/Dots/AdventagesDots.png" alt="icon" class="absolute w-full z-0 pointer-events-none" />
 
     <!-- Основной контент -->
     <div class="flex flex-col w-full gap-y-20">
@@ -17,10 +17,10 @@
       <div class="flex flex-wrap gap-x-16 gap-y-20">
 
         <div class="flex flex-col px-2 border-bottom-custom-adventage rounded-xl bg-custom-black-adventage flex-1 min-w-[250px] z-10">
-          <img src="../assets/img/Adventages/Combat.png" alt="icon" class="">
+          <img src="@/assets/img/Adventages/Combat.png" alt="icon" class="">
           <div class="px-4 pb-4">
             <h1 class="text-white flex items-center text-2xl">
-              <img src="../assets/img/icons/Adventages/CombatIco.png" alt="icon" class="w-7 h-7 mr-2">
+              <img src="@/assets/img/icons/Adventages/CombatIco.png" alt="icon" class="w-7 h-7 mr-2">
               Combat
             </h1>
             <p class="text-custom-white-adventage">
@@ -30,10 +30,10 @@
         </div>
 
         <div class="flex flex-col px-2 border-bottom-custom-adventage rounded-xl bg-custom-black-adventage flex-1 min-w-[250px] z-10">
-          <img src="../assets/img/Adventages/Visuals.png" alt="icon" class="">
+          <img src="@/assets/img/Adventages/Visuals.png" alt="icon" class="">
           <div class="px-4 pb-4">
             <h1 class="text-white flex items-center text-2xl">
-              <img src="../assets/img/icons/Adventages/VisualsIco.png" alt="icon" class="w-7 h-7 mr-2">
+              <img src="@/assets/img/icons/Adventages/VisualsIco.png" alt="icon" class="w-7 h-7 mr-2">
               Visuals
             </h1>
             <p class="text-custom-white-adventage">
@@ -43,10 +43,10 @@
         </div>
 
         <div class="flex flex-col px-2 border-bottom-custom-adventage rounded-xl bg-custom-black-adventage flex-1 min-w-[250px] z-10">
-          <img src="../assets/img/Adventages/Movement.png" alt="icon" class="">
+          <img src="@/assets/img/Adventages/Movement.png" alt="icon" class="">
           <div class="px-4 pb-4">
             <h1 class="text-white flex items-center text-2xl">
-              <img src="../assets/img/icons/Adventages/MovementIco.png" alt="icon" class="w-7 h-7 mr-2">
+              <img src="@/assets/img/icons/Adventages/MovementIco.png" alt="icon" class="w-7 h-7 mr-2">
               Movement
             </h1>
             <p class="text-custom-white-adventage">

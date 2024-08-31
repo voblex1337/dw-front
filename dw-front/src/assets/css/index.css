@@ -45,17 +45,14 @@
 }
 
 @layer base {
-  /* Скрываем полосу прокрутки в браузерах на основе Webkit (Chrome, Safari, Edge) */
   ::-webkit-scrollbar {
       display: none;
   }
 
-  /* Скрываем полосу прокрутки в Firefox */
   html {
       scrollbar-width: none; /* Firefox */
   }
 
-  /* Обязательно оставить возможность прокрутки */
   body {
       overflow-y: scroll;
   }

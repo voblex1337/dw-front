@@ -5,18 +5,12 @@
             <span class="text-titles-color text-2xl px-4 py-1.5 rounded-3xl bg-custom-gradient-titles border-2 border-violet-300">Pricing</span>
             <h1 class="text-center text-6xl custom-gradient-text-title">Select a Subscription</h1>
         </div>
-
-
-        <!-- <div class="absolute inset-0 flex justify-end items-end overflow-hidden z-10">
-            <img src="@/assets/img/ParticlesPricing.png" alt="icon" class="absolute w-full" />
-        </div> -->
-        
   
         <div class="flex flex-wrap justify-between w-full z-10 bg-[#09090D] bg-opacity-30 rounded-xl overflow-hidden custom-border">
             <div class="flex flex-grow items-center">
-                <img src="@/assets/img/Pricing/BuyAvatar.png" class="lg:w-[200] lg:h-[276px] w-2/12 h-2/12">
+                <img src="@/assets/img/Pricing/BuyAvatar.png" class="lg:w-[276px] lg:h-[276px] w-2/12 h-2/12">
                 <SubSelector class="z-50"/>
-                <img src="@/assets/img/Dots/PricingDots.png" alt="icon" class="absolute z-0 w-full h-fit mr-10"/>
+                <img src="@/assets/img/Dots/PricingDots.png" alt="icon" class="absolute z-0 w-full h-fit mr-10 pointer-events-none"/>
             </div>
 
             <div class="flex justify-center items-center px-20 z-50">

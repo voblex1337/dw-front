@@ -36,7 +36,7 @@ httpClient.interceptors.response.use(
         const refreshToken = AuthService.getRefreshToken();
         if (!refreshToken) throw new Error('No refresh token available');
 
-        const response = await axios.post('http://127.0.0.1:8000/api/v1/auth/refresh/', {
+        const response = await httpClient.post('auth/refresh/', {
           refresh: refreshToken,
         });
 

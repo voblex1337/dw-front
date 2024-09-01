@@ -31,32 +31,32 @@ import Review from '@/components/Reviews/SingleReview.vue'
 const reviews = [
     { 
         text: "Drainwalk keeps me ahead of the game! Even the most advanced anti-cheats can't stop me now.",
-        avatar: "/src/assets/img/ReviewsAvatars/test.jpeg"
+        avatar: "@/assets/img/ReviewsAvatars/test.jpeg"
     },
 
     { 
         text: "I've been using Drainwalk for months and haven't been caught once! Highly recommend it to anyone who wants to dominate.",
-        avatar: "/src/assets/img/ReviewsAvatars/test.jpeg"
+        avatar: "@/assets/img/ReviewsAvatars/test.jpeg"
     },
 
     { 
         text: "I never thought it would be this easy to bypass all the anti-cheats. Drainwalk is a game-changer!",
-        avatar: "/src/assets/img/ReviewsAvatars/test.jpeg"
+        avatar: "@/assets/img/ReviewsAvatars/test.jpeg"
     },
 
     { 
         text: "Now I'm always at the top of the leaderboard. Thanks to Drainwalk for giving me the edge!",
-        avatar: "/src/assets/img/ReviewsAvatars/test.jpeg"
+        avatar: "@/assets/img/ReviewsAvatars/test.jpeg"
     },
 
     { 
         text: "Thanks to Drainwalk, the game has become so much more fun! No more fear of getting banned.",
-        avatar: "/src/assets/img/ReviewsAvatars/test.jpeg"
+        avatar: "@/assets/img/ReviewsAvatars/test.jpeg"
     },
 
     { 
         text: "A reliable tool that truly works. Drainwalk is the best cheat I've ever used!",
-        avatar: "/src/assets/img/ReviewsAvatars/test.jpeg"
+        avatar: "@/assets/img/ReviewsAvatars/test.jpeg"
     },
 ];
 

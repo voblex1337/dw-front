@@ -3,17 +3,17 @@
             <div class="bg-custom-black-adventage border-bottom-custom-adventage rounded-xl flex flex-col md:flex-row p-5 w-full">
                 <div class="flex flex-col gap-y-4 w-full md:w-fit">
                     <div class="flex flex-row text-xl gap-x-2 blur-[11px]">
-                        <img src="@/assets/img/icons/Profile/info/Refferal.svg" class="w-6 h-6">
+                        <img src="@/assets/img/icons/Profile/Info/Refferal.svg" class="w-6 h-6">
                         <span class="text-white ">Your Refferal Code</span>
                     </div>
 
                     <div class="flex flex-row text-xl gap-x-2 blur-[11px]">
-                        <img src="@/assets/img/icons/Profile/info/RefferalNum.svg" class="w-6 h-6">
+                        <img src="@/assets/img/icons/Profile/Info/RefferalNum.svg" class="w-6 h-6">
                         <span class="text-white">Number Of Refferals</span>
                     </div>
 
                     <div class="flex flex-row text-xl gap-x-2 blur-[11px]">
-                        <img src="@/assets/img/icons/Profile/info/RefferalBonus.svg" class="w-6 h-6">
+                        <img src="@/assets/img/icons/Profile/Info/RefferalBonus.svg" class="w-6 h-6">
                         <span class="text-white">Refferal Bonus Earned</span>
                     </div>
                 </div>

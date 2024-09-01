@@ -4,32 +4,32 @@
 
             <div class="flex flex-col gap-y-4 w-full md:w-fit">
                 <div class="flex flex-row text-xl gap-x-2 items-center">
-                    <img src="@/assets/img/icons/Profile/info/RegDate.svg" class="w-6 h-6">
+                    <img src="@/assets/img/icons/Profile/Info/RegDate.svg" class="w-6 h-6">
                     <span class="text-white">Registration Date</span>
                 </div>
 
                 <div class="flex flex-row text-xl gap-x-2 items-center" v-if="user?.subscription?.expiration_date">
-                    <img src="@/assets/img/icons/Profile/info/ExpDate.svg" class="w-6 h-6">
+                    <img src="@/assets/img/icons/Profile/Info/ExpDate.svg" class="w-6 h-6">
                     <span class="text-white" >Expiration Date</span>
                 </div>
 
                 <div class="flex flex-row text-xl gap-x-2 items-center">
-                    <img src="@/assets/img/icons/Profile/info/LastLogDate.svg" class="w-6 h-6">
+                    <img src="@/assets/img/icons/Profile/Info/LastLogDate.svg" class="w-6 h-6">
                     <span class="text-white">Last Login Date</span>
                 </div>
 
                 <div v-if="user?.email" class="flex flex-row text-xl gap-x-2 items-center">
-                    <img src="@/assets/img/icons/Profile/info/Email.svg" class="w-6 h-6">
+                    <img src="@/assets/img/icons/Profile/Info/Email.svg" class="w-6 h-6">
                     <span class="text-white">Email</span>
                 </div>
 
                 <div v-if="user?.email" class="flex flex-row text-xl gap-x-2 items-center">
-                    <img src="@/assets/img/icons/Profile/info/Password.svg" class="w-6 h-6">
+                    <img src="@/assets/img/icons/Profile/Info/Password.svg" class="w-6 h-6">
                     <span class="text-white">Password</span>
                 </div>
 
                 <div v-if="user?.hwid" class="flex flex-row text-xl gap-x-2">
-                    <img src="@/assets/img/icons/Profile/info/Hwid.svg" class="w-6 h-6">
+                    <img src="@/assets/img/icons/Profile/Info/Hwid.svg" class="w-6 h-6">
                     <span class="text-white">HWID</span>
                 </div>
             </div>

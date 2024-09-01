@@ -1,9 +1,11 @@
 import axios, { AxiosError, AxiosHeaders } from 'axios';
-import type { AxiosRequestConfig, AxiosResponse, InternalAxiosRequestConfig } from 'axios';
+import type { AxiosResponse, InternalAxiosRequestConfig } from 'axios';
 import AuthService from '@/services/AuthService';
 
+const apiUrl = import.meta.env.VITE_APP_API_URL;
+
 const httpClient = axios.create({
-  baseURL: 'http://127.0.0.1:8000/api/v1/',
+  baseURL: apiUrl,
   headers: {
     'Content-Type': 'application/json',
   },

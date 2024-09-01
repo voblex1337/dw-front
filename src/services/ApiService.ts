@@ -31,6 +31,11 @@ httpClient.interceptors.response.use(
   async (error: AxiosError) => {
     const originalRequest = error.config as InternalAxiosRequestConfig & { _retry?: boolean };
 
+    // Исключаем обновление токена для запросов к логину
+    if (originalRequest.url?.includes('/auth/login/')) {
+      return Promise.reject(error); // просто пробрасываем ошибку дальше
+    }
+
     if (error.response?.status === 401 && !originalRequest._retry) {
       originalRequest._retry = true;
 
@@ -59,5 +64,6 @@ httpClient.interceptors.response.use(
     return Promise.reject(error);
   }
 );
+
 
 export default httpClient;

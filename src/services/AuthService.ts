@@ -1,4 +1,5 @@
 import httpClient from './ApiService';
+import axios, { AxiosError } from 'axios';
 
 class AuthService {
   setUsername(username: string): void {
@@ -52,24 +53,31 @@ class AuthService {
   }
 
   // Авторизация пользователя
-  async login(login: string, password: string): Promise<void> {
+  async login(login: string, password: string): Promise<string> {
     try {
       const response = await httpClient.post('/auth/login/', {
         login,
         password,
       });
-
+  
       const { access, refresh } = response.data;
       this.setJwtToken(access);
       this.setRefreshToken(refresh);
-
-      const username = response.data.username; 
+  
+      const username = response.data.username;
       this.setUsername(username);
       return username;
-      
+  
     } catch (error) {
-      console.error('Login failed:', error);
-      throw error;
+      if (axios.isAxiosError(error) && error.response) {
+        throw {
+          status: error.response.status,
+          data: error.response.data,
+        };
+      } else {
+        console.error('Unexpected error occurred:', error);
+        throw new Error('An unexpected error occurred');
+      }
     }
   }
 

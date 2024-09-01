@@ -29,10 +29,10 @@
           </div>
 
           <div>
-            <label for="login" class="block text-white mb-1">Email</label>
+            <label for="email" class="block text-white mb-1">Email</label>
             <div class="relative mb-4">
               <input 
-                id="login"
+                id="email"
                 v-model="email" 
                 placeholder="Email" 
                 type="email" 
@@ -40,7 +40,7 @@
               >
               <img 
                 src="@/assets/img/icons/Auth/email.png" 
-                alt="User Icon" 
+                alt="Email Icon" 
                 class="absolute left-3 top-1/2 transform -translate-y-1/2 w-5 h-5"
               >
             </div>
@@ -81,11 +81,15 @@
       </div>
 
   </div>
+  <notifications group="auth_error" position="bottom left" class="z-50"/>
+
 </template>
 
 <script setup lang="ts">
     import { ref, defineEmits } from 'vue'
     import { useRouter } from 'vue-router'; 
+    import { notify } from "@kyvg/vue3-notification";
+
 
     import AuthService from '@/services/AuthService';
     import { useUserStore } from '@/stores/UserStore'
@@ -107,6 +111,29 @@
     }
 
     const register = async () => {
+        // Проверяем, что поля не пустые
+        if (!username.value || !email.value || !password.value) {
+            notify({
+                group: "auth_error",
+                type: "error",
+                title: "Missing Fields",
+                text: "Please fill in all the fields.",
+            });
+            return;
+        }
+
+        // Проверяем корректность email
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailPattern.test(email.value)) {
+            notify({
+                group: "auth_error",
+                type: "error",
+                title: "Invalid Email",
+                text: "Please enter a valid email address.",
+            });
+            return;
+        }
+
         try {
             await AuthService.register(username.value, password.value, email.value);
 
@@ -115,8 +142,13 @@
             closePopup()
             router.push({ name: 'profile', params: { username: username.value } });
         } catch (error) {
+            notify({
+                group: "auth_error",
+                type: "error",
+                title: "Error",
+                text: "Some server error. Try again later",
+            });
             console.error('Registration failed:', error);
         }
     };
 </script>
-

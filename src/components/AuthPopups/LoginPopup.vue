@@ -68,11 +68,13 @@
 
       </div>
   </div>
+  <notifications group="auth_error" position="bottom left" class="z-50"/>
 </template>
 
 <script setup lang="ts">
     import { ref, defineEmits } from 'vue'
     import { useRouter } from 'vue-router'; 
+    import { notify } from "@kyvg/vue3-notification";
 
     import AuthService from '@/services/AuthService';
     import { useUserStore } from '@/stores/UserStore'
@@ -94,18 +96,54 @@
     }
 
     const handleLogin = async () => {
-    try {
-        const username = await AuthService.login(login.value, password.value);
-        console.log('Logged in user:', username);
+        // Проверяем, что поля не пустые
+        if (!login.value || !password.value) {
+            notify({
+                group: "auth_error",
+                type: "error",
+                title: "Empty fields",
+                text: "Please enter Login and Password.",
+            });
+            return; 
+        }
+        try {
+            const username = await AuthService.login(login.value, password.value);
+            console.log('Logged in user:', username);
 
-        await store.fetchPrivateUserInfo();
+            await store.fetchPrivateUserInfo();
 
-        closePopup()
-        router.push({ name: 'profile', params: { username: String(username) } });
-    } catch (error) {
-        console.error('Login failed:', error);
-    }
+            closePopup()
+            router.push({ name: 'profile', params: { username: String(username) } });
+        } catch (error) {
+            if (typeof error === 'object' && error !== null && 'status' in error && 'data' in error) {
+                // @ts-ignore
+                if (error.status === 401 && error.data && error.data.detail) {
+                    notify({
+                        group: "auth_error",
+                        type: "error",
+                        title: "Authorization Error",
+                        text: "Invalid Login or Password",
+                    });
+                } else { 
+                  notify({
+                group: "auth_error",
+                type: "error",
+                title: "Error",
+                text: "Some server error. Try again later",
+            });
+                }
+            } else {
+              notify({
+                group: "auth_error",
+                type: "error",
+                title: "Error",
+                text: "Some server error. Try again later",
+            });
+            }
+        }
 };
+
+
 
 </script>
 

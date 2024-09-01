@@ -62,25 +62,25 @@
 
         <span class="text-white flex flex-row text-xl items-center gap-2">
           <img src="../assets/img/Adventages/Users.png" alt="Users icon" class="w-6 h-6">
-          Users: 1488
+          Users: 0
         </span>
         <img src="../assets/img/Adventages/separator.png" alt="Separator" class="hidden md:block">
 
         <span class="text-white flex flex-row text-xl items-center gap-2">
           <img src="../assets/img/Adventages/Launches.png" alt="Launches icon" class="w-6 h-6">
-          Launches: 42,024
+          Launches: 0
         </span>
         <img src="../assets/img/Adventages/separator.png" alt="Separator" class="hidden md:block">
 
         <span class="text-white flex flex-row text-xl items-center gap-2">
           <img src="../assets/img/Adventages/Updates.png" alt="Updates icon" class="w-6 h-6">
-          Updates: 69
+          Updates: 0
         </span>
         <img src="../assets/img/Adventages/separator.png" alt="Separator" class="hidden md:block">
 
         <span class="text-white flex flex-row text-xl items-center gap-2">
           <img src="../assets/img/Adventages/Days.png" alt="Days icon" class="w-6 h-6">
-          Days: 1886
+          Days: 1
         </span>
         
       </div>

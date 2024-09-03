@@ -17,7 +17,7 @@
       <div class="flex flex-wrap gap-x-16 gap-y-20">
 
         <div class="flex flex-col px-2 border-bottom-custom-adventage rounded-xl bg-custom-black-adventage flex-1 min-w-[250px] z-10">
-          <img src="@/assets/img/Adventages/Combat.png" alt="icon" class="">
+          <img src="@/assets/img/Adventages/Combat.png" alt="icon" class="pointer-events-none">
           <div class="px-4 pb-4">
             <h1 class="text-white flex items-center text-2xl">
               <img src="@/assets/img/icons/Adventages/CombatIco.png" alt="icon" class="w-7 h-7 mr-2">
@@ -30,7 +30,7 @@
         </div>
 
         <div class="flex flex-col px-2 border-bottom-custom-adventage rounded-xl bg-custom-black-adventage flex-1 min-w-[250px] z-10">
-          <img src="@/assets/img/Adventages/Visuals.png" alt="icon" class="">
+          <img src="@/assets/img/Adventages/Visuals.png" alt="icon" class="pointer-events-none">
           <div class="px-4 pb-4">
             <h1 class="text-white flex items-center text-2xl">
               <img src="@/assets/img/icons/Adventages/VisualsIco.png" alt="icon" class="w-7 h-7 mr-2">
@@ -43,10 +43,10 @@
         </div>
 
         <div class="flex flex-col px-2 border-bottom-custom-adventage rounded-xl bg-custom-black-adventage flex-1 min-w-[250px] z-10">
-          <img src="@/assets/img/Adventages/Movement.png" alt="icon" class="">
+          <img src="@/assets/img/Adventages/Movement.png" alt="icon" class="pointer-events-none">
           <div class="px-4 pb-4">
             <h1 class="text-white flex items-center text-2xl">
-              <img src="@/assets/img/icons/Adventages/MovementIco.png" alt="icon" class="w-7 h-7 mr-2">
+              <img src="@/assets/img/icons/Adventages/MovementIco.png" alt="icon" class="w-7 h-7 mr-2 ">
               Movement
             </h1>
             <p class="text-custom-white-adventage">

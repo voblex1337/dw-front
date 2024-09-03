@@ -26,6 +26,7 @@ class AuthService {
   clearTokens(): void {
     localStorage.removeItem('jwtToken');
     localStorage.removeItem('refreshToken');
+    localStorage.removeItem('username');
   }
 
   isAuthenticated(): boolean {

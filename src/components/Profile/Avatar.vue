@@ -16,7 +16,7 @@
             </div>
         </div>
 
-        <div class="w-full flex flex-col gap-y-2">
+        <div class="w-full flex flex-col gap-y-2" v-if="user?.private">
             <div class="w-full flex flex-col md:flex-row justify-between gap-y-2 md:gap-x-2">
                 <button 
                     class="border-bottom-custom-adventage flex flex-row items-center justify-center bg-custom-black-adventage rounded-xl py-2 px-4 md:px-10 grow gap-x-1 text-white text-xl"
@@ -50,7 +50,7 @@
 <script setup lang="ts">
 import { useUserStore } from '@/stores/UserStore'
 import { useRouter } from 'vue-router';
-import { computed } from 'vue';
+import { computed, onMounted } from 'vue';
 
 import { notify } from "@kyvg/vue3-notification";
 import AuthService from '@/services/AuthService';

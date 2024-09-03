@@ -13,6 +13,9 @@ export const useUserStore = defineStore('userStore', () => {
         try {
             const response = await httpClient.get(`stat/get_user/${username}/`);
             user.value = response.data;
+            if (user.value) {
+                user.value.private = false;
+            }
 
             console.log('Public User Data:', response.data);
         } catch (error) {
@@ -29,6 +32,10 @@ export const useUserStore = defineStore('userStore', () => {
 
             const response = await httpClient.get('stat/get_myself/');
             user.value = response.data;
+
+            if (user.value) {
+                user.value.private = true;
+            }
 
             console.log('Private User Data:', response.data);
         } catch (error) {

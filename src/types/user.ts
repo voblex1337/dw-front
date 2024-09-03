@@ -21,6 +21,7 @@ export interface Subscription {
   export interface User {
     id: number;
     username: string;
+    private: boolean;
     email?: string;
     hwid?: string | null;
     role: string;

@@ -18,17 +18,17 @@
                     <span class="text-white">Last Login Date</span>
                 </div>
 
-                <div v-if="user?.email" class="flex flex-row text-xl gap-x-2 items-center">
+                <div v-if="user?.private" class="flex flex-row text-xl gap-x-2 items-center">
                     <img src="@/assets/img/icons/Profile/Info/Email.svg" class="w-6 h-6">
                     <span class="text-white">Email</span>
                 </div>
 
-                <div v-if="user?.email" class="flex flex-row text-xl gap-x-2 items-center">
+                <div v-if="user?.private" class="flex flex-row text-xl gap-x-2 items-center">
                     <img src="@/assets/img/icons/Profile/Info/Password.svg" class="w-6 h-6">
                     <span class="text-white">Password</span>
                 </div>
 
-                <div v-if="user?.hwid" class="flex flex-row text-xl gap-x-2">
+                <div v-if="user?.private" class="flex flex-row text-xl gap-x-2">
                     <img src="@/assets/img/icons/Profile/Info/Hwid.svg" class="w-6 h-6">
                     <span class="text-white">HWID</span>
                 </div>

@@ -34,12 +34,13 @@ class AuthService {
     return jwtToken !== null;
   }
 
-  async register(username: string, password: string, email: string): Promise<void> {
+  async register(username: string, password: string, email: string, token: string): Promise<void> {
     try {
       const response = await httpClient.post('/auth/register/', {
         username,
         password,
         email,
+        token,
       });
       const { access, refresh } = response.data;
       this.setUsername(username);

@@ -57,8 +57,9 @@
                     <PasswordPopup />
                 </div>
 
-                <div v-if="user?.hwid" class="flex flex-row justify-end text-xl gap-x-2">
-                    <span class="custom-gradient-text-title-main break-words">{{ user?.hwid }}</span>
+                <div class="flex flex-row justify-end text-xl gap-x-2" >
+                    <span class="custom-gradient-text-title-main break-words" v-if="user?.hwid !== null && user?.hwid !== undefined">{{ user.hwid }}</span>
+                    <span class="custom-gradient-text-title-main" v-else>None</span>
                 </div>
             </div>
 

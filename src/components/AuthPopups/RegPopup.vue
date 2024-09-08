@@ -184,7 +184,7 @@ onMounted(() => {
     // Initialize Turnstile with a callback to get the response token
     window.turnstile.render('#turnstile-element', {
       sitekey: '0x4AAAAAAAi8lBfwGM44vEO0',
-      callback: (token: string) => {
+      callback: (token) => {
         turnstileResponse.value = token;
       }
     });

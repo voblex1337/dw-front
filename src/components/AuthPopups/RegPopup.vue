@@ -170,8 +170,8 @@ onMounted(() => {
     // Initialize Turnstile with a callback to get the response token
     window.turnstile.render('#turnstile-element', {
       sitekey: '0x4AAAAAAAi7AlVU4HIKE6rm',
-      callback: (token) => {
-        turnstileResponse.value = token; // Сохраняем токен в реактивной переменной
+      callback: (token: string) => {
+        turnstileResponse.value = token;
       }
     });
   };

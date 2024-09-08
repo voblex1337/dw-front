@@ -1,15 +1,21 @@
 {
   "extends": "@vue/tsconfig/tsconfig.dom.json",
-  "include": ["env.d.ts", "src/**/*", "src/**/*.vue"],
+  "include": [
+    "env.d.ts",
+    "src/**/*",
+    "src/**/*.vue",
+    "src/shims-vue.d.ts" // Добавляем явное указание на ваш файл с глобальными объявлениями
+  ],
   "exclude": ["src/**/__tests__/*"],
   "compilerOptions": {
     "composite": true,
     "tsBuildInfoFile": "./node_modules/.tmp/tsconfig.app.tsbuildinfo",
-
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"]
     },
-    "types": ["node", "turnstile"]
+    "types": ["node"], // Удаляем "turnstile" отсюда
+    "skipLibCheck": true, // Это ускорит компиляцию и уберёт возможные ошибки с библиотеками
+    "strict": true // Для строгой проверки типов, если это необходимо
   }
 }

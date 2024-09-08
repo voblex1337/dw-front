@@ -10,6 +10,6 @@
     "paths": {
       "@/*": ["./src/*"]
     },
-    "types": ["node", "turnstile"]
+    "types": ["node"]
   }
 }

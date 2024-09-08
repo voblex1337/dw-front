@@ -16,8 +16,6 @@ export const useUserStore = defineStore('userStore', () => {
             if (user.value) {
                 user.value.private = false;
             }
-
-            console.log('Public User Data:', response.data);
         } catch (error) {
             console.error('Error fetching public user data:', error);
         }
@@ -37,7 +35,6 @@ export const useUserStore = defineStore('userStore', () => {
                 user.value.private = true;
             }
 
-            console.log('Private User Data:', response.data);
         } catch (error) {
             console.error('Error fetching private user data:', error);
         }

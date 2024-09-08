@@ -70,7 +70,7 @@
         </div>
 
         <!-- Cloudflare Turnstile CAPTCHA -->
-        <div id="turnstile-element" class="cf-turnstile flex justify-center items-center flex-col" data-sitekey="0x4AAAAAAAi8lBfwGM44vEO0"></div>
+        <div id="turnstile-element" class="cf-turnstile flex justify-center items-center flex-col" ></div>
 
         <!-- Submit button -->
         <button 
@@ -179,15 +179,15 @@ onMounted(() => {
   script.async = true;
   document.head.appendChild(script);
 
-  // Wait for the Turnstile script to load and attach the widget
   script.onload = () => {
-    // Initialize Turnstile with a callback to get the response token
-    window.turnstile.render('#turnstile-element', {
-      sitekey: '0x4AAAAAAAi8lBfwGM44vEO0',
-      callback: (token) => {
-        turnstileResponse.value = token;
-      }
-    });
+    if (!document.querySelector('.cf-turnstile responce')) {
+      window.turnstile.render('#turnstile-element', {
+        sitekey: '0x4AAAAAAAi8lBfwGM44vEO0',
+        callback: (token) => {
+          turnstileResponse.value = token;
+        }
+      });
+    }
   };
 });
 

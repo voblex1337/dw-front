@@ -1,6 +1,6 @@
 <template>
     <main class="relative min-h-screen overflow-hidden flex flex-col">
-        <Navbar activeSection="faq" @open-login-popup="toggleLoginPopup" @open-signup-popup="toggleSignupPopup" />
+        <Navbar activeSection="None" @open-login-popup="toggleLoginPopup" @open-signup-popup="toggleSignupPopup" />
         <img src="@/assets/img/Dots/TitleDots.png" alt="" class="absolute select-none z-0" />
 
         <div class="flex-grow flex items-center justify-center py-40 overflow-y-auto pb-72">

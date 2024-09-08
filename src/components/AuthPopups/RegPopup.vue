@@ -98,6 +98,20 @@ import AuthService from '@/services/AuthService';
 import { useUserStore } from '@/stores/UserStore';
 import { defineEmits } from 'vue';
 
+declare global {
+  interface Window {
+    turnstile: {
+      render: (
+        elementId: string,
+        options: {
+          sitekey: string,
+          callback: (token: string) => void;
+        }
+      ) => void;
+    };
+  }
+}
+
 const store = useUserStore();
 const emit = defineEmits(['close-popup', 'open-login']); // Event emitter
 const router = useRouter(); 

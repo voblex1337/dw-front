@@ -1,5 +1,5 @@
 <template>
-    <div class="flex flex-col gap-y-3 lg:w-fit w-full md:px-0 p-4">
+    <div class="flex flex-col gap-y-3 grow-0 md:px-0 p-4 w-full lg:w-fit">
         <div class="relative border-bottom-custom-adventage flex flex-col md:flex-row items-center bg-custom-black-adventage p-6 gap-y-3 md:gap-x-5 rounded-xl">
             
             <img src="@/assets/img/Profile/glow.svg" class="absolute z-10 w-full h-full pointer-events-none" >
@@ -7,12 +7,12 @@
             <img src="@/assets/img/ReviewsAvatars/test.jpeg" class="w-24 h-24 rounded-full ring-2 ring-[#D4CDFF] ring-offset-4 ring-offset-[#09090D]">
 
 
-            <div class="relative flex flex-col text-center md:text-left z-10">
+            <div class="relative flex flex-col text-center md:text-left z-10 lg:max-w-xl break-all">
                 <div class="flex flex-col md:flex-row gap-y-1 md:gap-x-1 text-3xl">
                     <h1 class="text-white">{{ user?.username }}</h1>
                     <h1 class="custom-gradient-text-title-main">[ {{ user?.role }} ]</h1>
                 </div>
-                <h1 class="text-[#4F4F53] p-1.5 bg-[#131317] w-fit h-fit rounded-md text-xl">UID: {{ user?.id }}</h1>
+                <h1 class="text-[#4F4F53] p-1.5 bg-[#131317] w-fit h-fit rounded-md text-xl text-center">UID: {{ user?.id }}</h1>
             </div>
         </div>
 

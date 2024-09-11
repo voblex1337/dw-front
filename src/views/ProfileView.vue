@@ -2,7 +2,7 @@
     <main class="relative min-h-screen overflow-hidden pb-40" ref="main">
         <Navbar :activeSection="null" @open-login-popup="toggleLoginPopup" @open-signup-popup="toggleSignupPopup" />
       
-        <div class="flex flex-wrap w-full h-full px-8 lg:px-40 mt-[95px] gap-x-2">
+        <div class="flex flex-wrap w-full h-full px-8 lg:px-40 mt-[95px] gap-x-2 pb-36 justify-center ">
 
             <Avatar />
             <Information />

@@ -5,9 +5,9 @@
             
             <!-- Логотип -->
             <div class="flex-1 flex items-center">
-            <router-link :to="{ name: 'main' }">
-                <img class="h-10 w-10 md:h-10 md:w-10 lg:h-10 lg:w-10 hover:animate-pulse" src="../assets/img/Avatar.svg" alt="TE Logo" loading="lazy" />
-            </router-link>
+                <router-link :to="{ name: 'main' }">
+                    <img class="h-10 w-10 md:h-10 md:w-10 lg:h-10 lg:w-10 hover:animate-pulse" src="../assets/img/Avatar.svg" alt="TE Logo" loading="lazy" />
+                </router-link>
             </div>
 
             <!-- Меню страниц -->
@@ -47,7 +47,6 @@
                         FAQ
                         <span v-if="activeSection === 'faq'" class="indicator"></span>
                     </RouterLink>
-                    
                 </div>
             </RouterLink>
 
@@ -61,14 +60,12 @@
                 <button class="text-white rounded-md px-4 py-1.5" @click="$emit('open-login-popup')">Login</button>
                 <button class="text-white bg-custom-gradient rounded-md px-4 py-1.5" @click="$emit('open-signup-popup')">Sign up</button>
             </div>
-
         </nav>
     </div>
 </template>
 
 
 <script setup lang="ts">
-import { ref, defineEmits } from 'vue'
 import { computed } from 'vue'
 
 import AuthService from '@/services/AuthService';

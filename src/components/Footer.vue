@@ -1,7 +1,7 @@
 <template>
     <footer class="absolute bottom-0 left-0 w-full py-4 px-8 flex justify-between items-center border-t border-gray-950 select-text">
         <div class="flex flex-col space-y-2 text-custom-white-adventage text-sm flex-1">
-            <span>Contact email scrait558@gmail.com</span>
+            <span>Contact email support@drainwalk.tech</span>
             <span>Copyright © 2022-2024</span>
             <span> <a href="https://t.me/jbdsgn" target="_blank"> Design by Jebrik12 </a> </span>
         </div>

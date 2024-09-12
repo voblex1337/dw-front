@@ -53,7 +53,7 @@
                 <ul class="list-disc list-inside">
                 <li>Access and update your personal information.</li>
                 <li>Request the deletion of your personal information.</li>
-                <li>Withdraw consent to data processing at any time by contacting us at scrait558@gmail.com.</li>
+                <li>Withdraw consent to data processing at any time by contacting us at support@drainwalk.tech.</li>
                 </ul>
             </div>
 
@@ -64,7 +64,7 @@
 
             <div>
                 <h3 class="text-xl font-semibold mb-4">9. Contact Us</h3>
-                <p>If you have any questions or concerns about this Privacy Policy, please contact us at scrait558@gmail.com.</p>
+                <p>If you have any questions or concerns about this Privacy Policy, please contact us at support@drainwalk.tech.</p>
             </div>
         </div>
     </div>

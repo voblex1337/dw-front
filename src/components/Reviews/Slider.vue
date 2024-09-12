@@ -28,7 +28,7 @@
 import { onMounted } from 'vue';
 import Review from '@/components/Reviews/SingleReview.vue'
 
-const reviews = [
+const reviews1 = [
     { 
         text: "Drainwalk keeps me ahead of the game! Even the most advanced anti-cheats can't stop me now.",
         avatar: "@/assets/img/ReviewsAvatars/test.jpeg"
@@ -56,6 +56,38 @@ const reviews = [
 
     { 
         text: "A reliable tool that truly works. Drainwalk is the best cheat I've ever used!",
+        avatar: "@/assets/img/ReviewsAvatars/test.jpeg"
+    },
+];
+
+const reviews = [
+    { 
+        text: "DW Cleaner quickly and efficiently removes junk files, noticeably speeding up system performance.",
+        avatar: "@/assets/img/ReviewsAvatars/test.jpeg"
+    },
+
+    { 
+        text: "Great program that deletes all unnecessary files and frees up a lot of disk space.",
+        avatar: "@/assets/img/ReviewsAvatars/test.jpeg"
+    },
+
+    { 
+        text: "Simple and intuitive app that cleans the system in just a few minutes.",
+        avatar: "@/assets/img/ReviewsAvatars/test.jpeg"
+    },
+
+    { 
+        text: "DW Cleaner helped me get rid of junk files and improved my PC's performance.",
+        avatar: "@/assets/img/ReviewsAvatars/test.jpeg"
+    },
+
+    { 
+        text: "The program effectively cleans even old computers, significantly boosting their speed.",
+        avatar: "@/assets/img/ReviewsAvatars/test.jpeg"
+    },
+
+    { 
+        text: "Convenient tool for regularly removing system clutter and keeping your PC clean.",
         avatar: "@/assets/img/ReviewsAvatars/test.jpeg"
     },
 ];

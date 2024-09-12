@@ -12,10 +12,10 @@
                 <h3 class="text-xl font-semibold mb-4">1. Prohibited Activities</h3>
                 <p>Users of DrainWalk are prohibited from:</p>
                 <ul class="list-disc list-inside">
-                    <li><strong>Editing Files:</strong> You are not allowed to modify any files related to the launcher, website, or client.</li>
-                    <li><strong>Hacking or Cracking:</strong> Any attempt to hack or crack the launcher, website, or client is strictly forbidden.</li>
+                    <li><strong>Editing Files:</strong> You are not allowed to modify any files related to the launcher, website, or software.</li>
+                    <li><strong>Hacking or Cracking:</strong> Any attempt to hack or crack the launcher, website, or software is strictly forbidden.</li>
                     <li><strong>Account Sharing:</strong> Selling, transferring, or sharing your account is not allowed.</li>
-                    <li><strong>File Distribution:</strong> Unauthorized distribution of files related to the launcher, website, or client is prohibited.</li>
+                    <li><strong>File Distribution:</strong> Unauthorized distribution of files related to the launcher, website, or software is prohibited.</li>
                 </ul>
             </div>
 
@@ -31,7 +31,7 @@
 
             <div>
                 <h3 class="text-xl font-semibold mb-4">4. Contact Information</h3>
-                <p>For any inquiries or issues related to these rules, please contact us at scrait558@gmail.com.</p>
+                <p>For any inquiries or issues related to these rules, please contact us at support@drainwalk.tech.</p>
             </div>
         </div>
     </div>

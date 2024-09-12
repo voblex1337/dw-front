@@ -74,7 +74,7 @@ const faqs = ref([
     {
         id: 3,
         question: 'How do I update my Profile Information?',
-        answer: 'Your profile information is updated automatically as you play. You do not need to do anything. We advise you not to forcefully turn off Drainwalk (alf + f4) as information about the session may not be saved.',
+        answer: 'Your profile information is updated automatically. You do not need to do anything. We advise you not to forcefully turn off Drainwalk (alf + f4) as information about the session may not be saved.',
         isOpen: false,
     },
     {

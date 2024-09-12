@@ -36,7 +36,7 @@
             <div>
                 <h3 class="text-xl font-semibold mb-4">5. Payment and Refund Policy</h3>
                 <p><strong>Payment:</strong> Payment for services must be made through our approved payment methods. By completing a purchase, you agree to pay the indicated amount.</p>
-                <p><strong>Refunds:</strong> Refund requests will be considered on a case-by-case basis. If you believe you are entitled to a refund, please contact us at scrait558@gmail.com with your request.</p>
+                <p><strong>Refunds:</strong> Refund requests will be considered on a case-by-case basis. If you believe you are entitled to a refund, please contact us at support@drainwalk.tech with your request.</p>
             </div>
 
             <div>
@@ -56,7 +56,7 @@
 
             <div>
                 <h3 class="text-xl font-semibold mb-4">9. Contact Us</h3>
-                <p>If you have any questions or concerns about these Terms, please contact us at scrait558@gmail.com.</p>
+                <p>If you have any questions or concerns about these Terms, please contact us at support@drainwalk.tech.</p>
             </div>
         </div>
     </div>

@@ -37,7 +37,7 @@ const messages: Record<string, MessageSchema> = {
 const i18n = createI18n<MessageSchema>({
   locale: 'en', // Язык по умолчанию
   fallbackLocale: 'en',
-  messages, // Передаем переводы
+  // messages, // Передаем переводы
 });
 
 export default i18n;

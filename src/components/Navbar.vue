@@ -3,7 +3,7 @@
       <img src="@/assets/img/NavbarGlow.svg" class="absolute z-0 pointer-events-none">
       <nav class="relative max-w-screen-xl mx-auto flex items-center shadow-dark-mild z-50 nav-border py-2 h-[76px]">
         <!-- Логотип -->
-        <div class="flex-1 flex items-center gap-x-10">
+        <div class="flex-1 flex items-center gap-x-10 ">
             <router-link :to="{ name: 'main' }">
                 <img class="h-10 w-10 md:h-10 md:w-10 lg:h-10 lg:w-10 hover:animate-pulse" src="../assets/img/Avatar.svg" alt="TE Logo" loading="lazy" />
             </router-link>

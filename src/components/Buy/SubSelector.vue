@@ -31,16 +31,19 @@
 <script setup>
 import { ref, computed } from 'vue';
 import { useSubscriptionStore } from '@/stores/SubStore';
+import { useI18n } from 'vue-i18n';
 
 import dotIcon from '@/assets/img/icons/Pricing/Radio.svg';
 import selectedDotIcon from '@/assets/img/icons/Pricing/ActiveRadio.svg';
 
 const subscriptionStore = useSubscriptionStore();
 
-const plans = ref([
-  { sub_type: 'MONTH', price: 199, name: '1 month' },
-  { sub_type: 'THREE_MONTHS', price: 299, name: '3 months' },
-  { sub_type: 'YEAR', price: 499, name: '12 months' },
+const { t } = useI18n();
+
+const plans = computed(() => [
+    { sub_type: 'MONTH', price: 199, name: t('pricing.month') },
+    { sub_type: 'THREE_MONTHS', price: 299, name: t('pricing.three_months') },
+    { sub_type: 'YEAR', price: 499, name: t('pricing.year') },
 ]);
 
 const selectedPlan = computed({

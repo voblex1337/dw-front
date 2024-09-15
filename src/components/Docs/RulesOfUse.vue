@@ -1,38 +1,39 @@
 <template>
     <div class="w-full max-w-7xl mx-auto p-8 space-y-16">
-        <!-- Заголовок -->
-        <div class="text-center">
-            <h1 class="custom-gradient-text-title text-6xl">Rules of Use</h1>
-            <h2 class="faq-date-text text-2xl mt-2">29.08.2024</h2>
+      <!-- Заголовок -->
+      <div class="text-center">
+        <h1 class="custom-gradient-text-title text-6xl">{{ $t('rules.title') }}</h1>
+        <h2 class="faq-date-text text-2xl mt-2">{{ $t('rules.date') }}</h2>
+      </div>
+  
+      <!-- Основной текст политики использования -->
+      <div class="text-white space-y-6 leading-relaxed">
+        <div>
+          <h3 class="text-xl font-semibold mb-4">{{ $t('rules.section1.title') }}</h3>
+          <p>{{ $t('rules.section1.text') }}</p>
+          <ul class="list-disc list-inside">
+            <li><strong>{{ $t('rules.section1.editingFiles') }}:</strong> {{ $t('rules.section1.editingFilesDesc') }}</li>
+            <li><strong>{{ $t('rules.section1.hacking') }}:</strong> {{ $t('rules.section1.hackingDesc') }}</li>
+            <li><strong>{{ $t('rules.section1.accountSharing') }}:</strong> {{ $t('rules.section1.accountSharingDesc') }}</li>
+            <li><strong>{{ $t('rules.section1.fileDistribution') }}:</strong> {{ $t('rules.section1.fileDistributionDesc') }}</li>
+          </ul>
         </div>
-    
-        <!-- Основной текст политики использования -->
-        <div class="text-white space-y-6 leading-relaxed">
-            <div>
-                <h3 class="text-xl font-semibold mb-4">1. Prohibited Activities</h3>
-                <p>Users of DrainWalk are prohibited from:</p>
-                <ul class="list-disc list-inside">
-                    <li><strong>Editing Files:</strong> You are not allowed to modify any files related to the launcher, website, or software.</li>
-                    <li><strong>Hacking or Cracking:</strong> Any attempt to hack or crack the launcher, website, or software is strictly forbidden.</li>
-                    <li><strong>Account Sharing:</strong> Selling, transferring, or sharing your account is not allowed.</li>
-                    <li><strong>File Distribution:</strong> Unauthorized distribution of files related to the launcher, website, or software is prohibited.</li>
-                </ul>
-            </div>
-
-            <div>
-                <h3 class="text-xl font-semibold mb-4">2. Account Suspension</h3>
-                <p>The Administrator reserves the right to suspend or ban your account at their sole discretion for violations of these rules or any other behavior deemed inappropriate.</p>
-            </div>
-
-            <div>
-                <h3 class="text-xl font-semibold mb-4">3. Compliance</h3>
-                <p>By using DrainWalk, you agree to comply with these rules and any other policies or guidelines provided by us.</p>
-            </div>
-
-            <div>
-                <h3 class="text-xl font-semibold mb-4">4. Contact Information</h3>
-                <p>For any inquiries or issues related to these rules, please contact us at support@drainwalk.tech.</p>
-            </div>
+  
+        <div>
+          <h3 class="text-xl font-semibold mb-4">{{ $t('rules.section2.title') }}</h3>
+          <p>{{ $t('rules.section2.text') }}</p>
         </div>
+  
+        <div>
+          <h3 class="text-xl font-semibold mb-4">{{ $t('rules.section3.title') }}</h3>
+          <p>{{ $t('rules.section3.text') }}</p>
+        </div>
+  
+        <div>
+          <h3 class="text-xl font-semibold mb-4">{{ $t('rules.section4.title') }}</h3>
+          <p>{{ $t('rules.section4.text') }}</p>
+        </div>
+      </div>
     </div>
 </template>
+  

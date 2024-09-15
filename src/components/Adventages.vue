@@ -3,8 +3,8 @@
 
     <!-- Заголовок и подзаголовок -->
     <div class="flex flex-col items-center justify-center gap-y-2 z-10 text-center">
-      <span class="text-titles-color text-2xl px-4 py-1.5 rounded-3xl bg-custom-gradient-titles border-2 border-violet-300">About Us</span>
-      <h1 class="text-center text-6xl custom-gradient-text-title">Why DrainWalk?</h1>
+      <span class="text-titles-color text-2xl px-4 py-1.5 rounded-3xl bg-custom-gradient-titles border-2 border-violet-300">{{ $t('adventages.title') }}</span>
+      <h1 class="text-center text-6xl custom-gradient-text-title">{{ $t('adventages.title2') }}</h1>
     </div>
 
     <img src="../assets/img/glow.png" alt="icon" class="absolute z-10 h-1/4 pointer-events-none"/>
@@ -25,13 +25,13 @@
             </h1> -->
             <h1 class="text-white flex items-center text-2xl">
               <img src="@/assets/img/icons/Adventages/Combat.svg" alt="icon" class="w-7 h-7 mr-2">
-              Performance
+              {{ $t('adventages.first.name') }}
             </h1>
             <!-- <p class="text-custom-white-adventage">
               With drainwalk you will always defeat everyone, because our cheat bypasses a huge number of anti-cheats.
             </p> -->
             <p class="text-custom-white-adventage">
-              С DW Cleaner ваш компьютер всегда будет работать быстрее, так как наша программа эффективно удаляет ненужные файлы и мусор, освобождая ресурсы системы.
+              {{ $t('adventages.first.text') }}            
             </p>
           </div>
         </div>
@@ -45,13 +45,13 @@
             </h1> -->
             <h1 class="text-white flex items-center text-2xl">
               <img src="@/assets/img/icons/Adventages/Visuals.svg" alt="icon" class="w-7 h-7 mr-2">
-              Storage
+              {{ $t('adventages.second.name') }}
             </h1>
             <!-- <p class="text-custom-white-adventage">
               Explore stunning visual features of the client. We made huge reliance on visual features.
             </p> -->
             <p class="text-custom-white-adventage">
-              Оцените превосходные функции очистки. Мы уделили особое внимание освобождению места на диске, что помогает вашему ПК работать более эффективно.
+              {{ $t('adventages.second.text') }}
             </p>
           </div>
         </div>
@@ -65,10 +65,10 @@
             </h1> -->
             <h1 class="text-white flex items-center text-2xl">
               <img src="@/assets/img/icons/Adventages/Movement.svg" alt="icon" class="w-7 h-7 mr-2 ">
-              Optimization
+              {{ $t('adventages.third.name') }}
             </h1>
             <p class="text-custom-white-adventage">
-              Мы также предлагаем функции оптимизации, которые ускоряют загрузку системы, улучшая производительность даже на старых компьютерах.
+              {{ $t('adventages.third.text') }}
             </p>
             <!-- <p class="text-custom-white-adventage">
               We also provide you with fly, speed, and other functions that perfectly bypass FunTime and other servers.
@@ -83,25 +83,25 @@
 
         <span class="text-white flex flex-row text-xl items-center gap-2">
           <img src="../assets/img/Adventages/Users.png" alt="Users icon" class="w-6 h-6">
-          Users: 0
+          {{ $t('adventages.stat.users') }} 0
         </span>
         <img src="../assets/img/Adventages/separator.png" alt="Separator" class="hidden md:block">
 
         <span class="text-white flex flex-row text-xl items-center gap-2">
           <img src="../assets/img/Adventages/Launches.png" alt="Launches icon" class="w-6 h-6">
-          Launches: 0
+          {{ $t('adventages.stat.launches') }} 0
         </span>
         <img src="../assets/img/Adventages/separator.png" alt="Separator" class="hidden md:block">
 
         <span class="text-white flex flex-row text-xl items-center gap-2">
           <img src="../assets/img/Adventages/Updates.png" alt="Updates icon" class="w-6 h-6">
-          Updates: 0
+          {{ $t('adventages.stat.updates') }} 0
         </span>
         <img src="../assets/img/Adventages/separator.png" alt="Separator" class="hidden md:block">
 
         <span class="text-white flex flex-row text-xl items-center gap-2">
           <img src="../assets/img/Adventages/Days.png" alt="Days icon" class="w-6 h-6">
-          Days: 1
+          {{ $t('adventages.stat.days') }} 1
         </span>
         
       </div>

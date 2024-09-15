@@ -2,8 +2,8 @@
     <div class="shadow-lg w-full max-w-full h-full flex flex-col items-center justify-center gap-y-20 px-10 md:px-8 overflow-hidden">
   
         <div class="flex flex-col items-center justify-center gap-y-2 z-10 text-center relative">
-            <span class="text-titles-color text-2xl px-4 py-1.5 rounded-3xl bg-custom-gradient-titles border-2 border-violet-300">Pricing</span>
-            <h1 class="text-center text-6xl custom-gradient-text-title">Select a Subscription</h1>
+            <span class="text-titles-color text-2xl px-4 py-1.5 rounded-3xl bg-custom-gradient-titles border-2 border-violet-300">{{ $t('pricing.title') }}</span>
+            <h1 class="text-center text-6xl custom-gradient-text-title">{{ $t('pricing.title2') }}</h1>
         </div>
   
         <div class="flex flex-wrap justify-between w-full z-10 bg-[#09090D] bg-opacity-30 rounded-xl overflow-hidden custom-border">

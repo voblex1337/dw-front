@@ -8,7 +8,7 @@
         : 'shadow-none cursor-not-allowed opacity-80 bg-custom-gradient'
     ]"
     @click="handleClick">
-      Buy
+    {{ $t('pricing.button') }}
     <img src="@/assets/img/icons/buyico.svg" alt="icon" class="ml-2 w-10 h-10">
   </button>
   

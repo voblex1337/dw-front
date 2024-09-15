@@ -31,7 +31,7 @@
   
         <div>
           <h3 class="text-xl font-semibold mb-4">{{ $t('rules.section4.title') }}</h3>
-          <p>{{ $t('rules.section4.text') }}</p>
+          <p>{{ $t('rules.section4.text') }} support@drainwalk.tech.</p>
         </div>
       </div>
     </div>

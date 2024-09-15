@@ -110,7 +110,7 @@ const messages = {
         text: 'You have the right to:',
         access: 'Access and update your personal information.',
         delete: 'Request the deletion of your personal information.',
-        withdraw: 'Withdraw consent to data processing at any time by contacting us at support@drainwalk.tech.',
+        withdraw: 'Withdraw consent to data processing at any time by contacting us at',
       },
       section8: {
         title: '8. Changes to This Privacy Policy',
@@ -118,7 +118,7 @@ const messages = {
       },
       section9: {
         title: '9. Contact Us',
-        text: 'If you have any questions or concerns about this Privacy Policy, please contact us at support@drainwalk.tech.',
+        text: 'If you have any questions or concerns about this Privacy Policy, please contact us at ',
       },
     },
 
@@ -147,7 +147,7 @@ const messages = {
       },
       section4: {
         title: '4. Contact Information',
-        text: 'For any inquiries or issues related to these rules, please contact us at support@drainwalk.tech.',
+        text: 'For any inquiries or issues related to these rules, please contact us at ',
       },
     },
 
@@ -181,7 +181,7 @@ const messages = {
         payment: 'Payment',
         paymentDesc: 'Payment for services must be made through our approved payment methods. By completing a purchase, you agree to pay the indicated amount.',
         refunds: 'Refunds',
-        refundsDesc: 'Refund requests will be considered on a case-by-case basis. If you believe you are entitled to a refund, please contact us at support@drainwalk.tech with your request.',
+        refundsDesc: 'Refund requests will be considered on a case-by-case basis. If you believe you are entitled to a refund, please contact us at ',
       },
       section6: {
         title: '6. Limitation of Liability',
@@ -197,7 +197,7 @@ const messages = {
       },
       section9: {
         title: '9. Contact Us',
-        text: 'If you have any questions or concerns about these Terms, please contact us at support@drainwalk.tech.',
+        text: 'If you have any questions or concerns about these Terms, please contact us at ',
       },
     },
 
@@ -319,7 +319,7 @@ const messages = {
         text: 'У вас есть право на:',
         access: 'Доступ и обновление вашей личной информации.',
         delete: 'Запрос на удаление вашей личной информации.',
-        withdraw: 'Отзыв согласия на обработку данных в любое время, связавшись с нами по адресу support@drainwalk.tech.',
+        withdraw: 'Отзыв согласия на обработку данных в любое время, связавшись с нами по адресу ',
       },
       section8: {
         title: '8. Изменения в данной Политике конфиденциальности',
@@ -327,7 +327,7 @@ const messages = {
       },
       section9: {
         title: '9. Контакты',
-        text: 'Если у вас есть вопросы или замечания по поводу данной Политики конфиденциальности, пожалуйста, свяжитесь с нами по адресу support@drainwalk.tech.',
+        text: 'Если у вас есть вопросы или замечания по поводу данной Политики конфиденциальности, пожалуйста, свяжитесь с нами по адресу ',
       },
     },
 
@@ -356,7 +356,7 @@ const messages = {
       },
       section4: {
         title: '4. Контактная информация',
-        text: 'По любым вопросам или проблемам, связанным с этими правилами, пожалуйста, свяжитесь с нами по адресу support@drainwalk.tech.',
+        text: 'По любым вопросам или проблемам, связанным с этими правилами, пожалуйста, свяжитесь с нами по адресу',
       },
     },
 
@@ -390,7 +390,7 @@ const messages = {
         payment: 'Оплата',
         paymentDesc: 'Оплата за услуги должна производиться через одобренные нами способы оплаты. Завершив покупку, вы соглашаетесь оплатить указанную сумму.',
         refunds: 'Возвраты',
-        refundsDesc: 'Запросы на возврат будут рассматриваться в индивидуальном порядке. Если вы считаете, что имеете право на возврат, пожалуйста, свяжитесь с нами по адресу support@drainwalk.tech с вашим запросом.',
+        refundsDesc: 'Запросы на возврат будут рассматриваться в индивидуальном порядке. Если вы считаете, что имеете право на возврат, пожалуйста, свяжитесь с нами по адресу',
       },
       section6: {
         title: '6. Ограничение ответственности',
@@ -406,7 +406,7 @@ const messages = {
       },
       section9: {
         title: '9. Свяжитесь с нами',
-        text: 'Если у вас есть вопросы или сомнения по поводу этих Условий, пожалуйста, свяжитесь с нами по адресу support@drainwalk.tech.',
+        text: 'Если у вас есть вопросы или сомнения по поводу этих Условий, пожалуйста, свяжитесь с нами по адресу ',
       },
     },
 

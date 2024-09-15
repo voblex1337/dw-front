@@ -3,10 +3,24 @@
       <img src="@/assets/img/NavbarGlow.svg" class="absolute z-0 pointer-events-none">
       <nav class="relative max-w-screen-xl mx-auto flex items-center shadow-dark-mild z-50 nav-border py-2 h-[76px]">
         <!-- Логотип -->
-        <div class="flex-1 flex items-center">
-          <router-link :to="{ name: 'main' }">
-            <img class="h-10 w-10 md:h-10 md:w-10 lg:h-10 lg:w-10 hover:animate-pulse" src="../assets/img/Avatar.svg" alt="TE Logo" loading="lazy" />
-          </router-link>
+        <div class="flex-1 flex items-center gap-x-10">
+            <router-link :to="{ name: 'main' }">
+                <img class="h-10 w-10 md:h-10 md:w-10 lg:h-10 lg:w-10 hover:animate-pulse" src="../assets/img/Avatar.svg" alt="TE Logo" loading="lazy" />
+            </router-link>
+            <div class="flex justify-end gap-2.5 z-50">
+                <button
+                    @click="switchLanguage('en-US')"
+                    :class="{'bg-gray-800 text-white': currentLanguage !== 'en-US', 'bg-green-600 text-white': currentLanguage === 'en-US'}"
+                    class="px-4 py-2 rounded-lg transition-colors duration-300">
+                    EN
+                </button>
+                <button
+                    @click="switchLanguage('ru-RU')"
+                    :class="{'bg-gray-800 text-white': currentLanguage !== 'ru-RU', 'bg-green-600 text-white': currentLanguage === 'ru-RU'}"
+                    class="px-4 py-2 rounded-lg transition-colors duration-300">
+                    RU
+                </button>
+            </div>
         </div>
   
         <!-- Меню страниц -->
@@ -59,70 +73,69 @@
             <button class="text-white bg-custom-gradient rounded-md px-4 py-1.5" @click="$emit('open-signup-popup')">{{ $t('navbar.signup') }}</button>
           </template>
         </div>
-  
-        <!-- Кнопки переключения языка -->
-        <div class="flex justify-end gap-2.5 z-50">
-          <button @click="switchLanguage('en')" class="text-white">EN</button>
-          <button @click="switchLanguage('ru')" class="text-white">RU</button>
-        </div>
+
       </nav>
     </div>
-  </template>
+</template>
   
-  <script setup lang="ts">
-  import { computed } from 'vue';
-  import { useI18n } from 'vue-i18n';
+<script setup lang="ts">
+import { computed, ref, onMounted  } from 'vue';
+import { useI18n } from 'vue-i18n';
+
+import AuthService from '@/services/AuthService';
+
+const isAuthenticated = computed(() => AuthService.isAuthenticated());
+const getUsername = computed(() => AuthService.getUsername());
+
+const props = defineProps<{
+activeSection: string | null
+}>();
+
+const scrollToSection = (section: string) => {
+const element = document.getElementById(`section${section.charAt(0).toUpperCase() + section.slice(1)}`);
+if (element) {
+    element.scrollIntoView({ behavior: 'smooth' });
+}
+};
+
+const { locale } = useI18n();
+const currentLanguage = ref<string>(localStorage.getItem('userLanguage') || 'en-US');
+const switchLanguage = (lang: string) => {
+    currentLanguage.value = lang;
+    localStorage.setItem('userLanguage', lang);
+    locale.value = currentLanguage.value;
+};
+
+
+onMounted(() => {
+    currentLanguage.value = localStorage.getItem('userLanguage') || 'en-US';
+});
+</script>
   
-  import AuthService from '@/services/AuthService';
-  
-  const isAuthenticated = computed(() => AuthService.isAuthenticated());
-  const getUsername = computed(() => AuthService.getUsername());
-  
-  const props = defineProps<{
-    activeSection: string | null
-  }>();
-  
-  const scrollToSection = (section: string) => {
-    const element = document.getElementById(`section${section.charAt(0).toUpperCase() + section.slice(1)}`);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-  
-  // Переключение языка
-  const { locale } = useI18n();
-  const switchLanguage = (lang: string) => {
-    const selectedLocale = lang === 'en' ? 'en-US' : 'ru-RU';
-    locale.value = selectedLocale;
-    localStorage.setItem('userLanguage', selectedLocale);
-    // window.location.reload();
-  };
-  </script>
-  
-  <style scoped>
-  .menu-item {
-    position: relative;
-    padding: 0.5rem 1rem;
-    text-decoration: none;
-    color: white;
-    cursor: pointer;
-    white-space: nowrap; 
-  }
-  
-  .indicator {
-    display: block;
-    position: absolute;
-    bottom: -5px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 6px; 
-    height: 6px; 
-    background-color: #A39BD6; 
-    border-radius: 50%;
-  }
-  
-  .menu-item.active {
-    font-weight: bold;
-  }
-  </style>
+<style scoped>
+.menu-item {
+  position: relative;
+  padding: 0.5rem 1rem;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+  white-space: nowrap; 
+}
+
+.indicator {
+  display: block;
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px; 
+  height: 6px; 
+  background-color: #A39BD6; 
+  border-radius: 50%;
+}
+
+.menu-item.active {
+  font-weight: bold;
+}
+</style>
   

@@ -201,14 +201,14 @@ const messages = {
       },
     },
 
-    "footer": {
-      "contact_email": "Contact email support@drainwalk.tech",
-      "copyright": "Copyright © 2022-2024",
-      "design_by": "Design by Jebrik12",
-      "privacy_policy": "Privacy Policy",
-      "terms_of_service": "Terms of Service",
-      "rules_of_use": "Rules of Use"
-    }
+    footer: {
+      contact_email: "Contact email ",
+      copyright: "Copyright © 2022-2024",
+      design_by: "Design by Jebrik12",
+      privacy_policy: "Privacy Policy",
+      terms_of_service: "Terms of Service",
+      rules_of_use: "Rules of Use"
+  }
 
   },
   'ru-RU': {
@@ -410,13 +410,13 @@ const messages = {
       },
     },
 
-    "footer": {
-      "contact_email": "Контактный email support@drainwalk.tech",
-      "copyright": "Авторские права © 2022-2024",
-      "design_by": "Дизайн от Jebrik12",
-      "privacy_policy": "Политика конфиденциальности",
-      "terms_of_service": "Условия обслуживания",
-      "rules_of_use": "Правила использования"
+    footer: {
+      contact_email: "Контактный email ",
+      copyright: "Авторские права © 2022-2024",
+      design_by: "Дизайн от Jebrik12",
+      privacy_policy: "Политика конфиденциальности",
+      terms_of_service: "Условия обслуживания",
+      rules_of_use: "Правила использования"
     }
 
   },

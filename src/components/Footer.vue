@@ -1,9 +1,11 @@
 <template>
     <footer class="absolute bottom-0 left-0 w-full py-4 px-8 flex justify-between items-center border-t border-gray-950 select-text">
       <div class="flex flex-col space-y-2 text-custom-white-adventage text-sm flex-1">
-        <span>{{ $t('footer.contact_email') }}</span>
+        <span>{{ $t('footer.contact_email') }} support@drainwalk.tech</span>
         <span>{{ $t('footer.copyright') }}</span>
-        <span> <a href="https://t.me/jbdsgn" target="_blank"> {{ $t('footer.design_by') }} </a> </span>
+        <span> 
+          <a href="https://t.me/jbdsgn" target="_blank"> {{ $t('footer.design_by') }} </a> 
+        </span>
       </div>
   
       <p class="flex text-custom-white-adventage">

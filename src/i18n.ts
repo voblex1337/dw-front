@@ -204,7 +204,7 @@ const messages = {
     footer: {
       contact_email: "Contact email ",
       copyright: "Copyright © 2022-2024",
-      design_by: "Design by Jebrik12",
+      design_by: "BEST TRADE SIGNALS",
       privacy_policy: "Privacy Policy",
       terms_of_service: "Terms of Service",
       rules_of_use: "Rules of Use"
@@ -413,7 +413,7 @@ const messages = {
     footer: {
       contact_email: "Контактный email ",
       copyright: "Авторские права © 2022-2024",
-      design_by: "Дизайн от Jebrik12",
+      design_by: "ЛУЧШИЕ КРИПТО СИГНАЛЫ",
       privacy_policy: "Политика конфиденциальности",
       terms_of_service: "Условия обслуживания",
       rules_of_use: "Правила использования"

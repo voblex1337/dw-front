@@ -4,7 +4,7 @@
         <span>{{ $t('footer.contact_email') }} support@drainwalk.tech</span>
         <span>{{ $t('footer.copyright') }}</span>
         <span> 
-          <a href="https://t.me/jbdsgn" target="_blank"> {{ $t('footer.design_by') }} </a> 
+          <a href="https://t.me/crypto_cheburah" target="_blank"> {{ $t('footer.design_by') }} </a> 
         </span>
       </div>
   

@@ -1,8 +1,10 @@
 # dw-front
 
-This template should help get you started developing with Vue 3 in Vite.
+vue3 + typescript
+tailwind css for UI
+pinia store for state management
 
-## Recommended IDE Setup
+## next - default vite text ------->
 
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
 

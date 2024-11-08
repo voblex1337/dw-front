@@ -1,9 +1,12 @@
 # dw-front
 
 vue3 + typescript
+
 tailwind css for UI
+
 pinia store for state management
 
+github actions for fast docker deploy 
 ## next - default vite text ------->
 
 [VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
